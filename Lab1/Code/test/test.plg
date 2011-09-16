@@ -1,0 +1,38 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+C:\Users\Akeel\McGill\Fall 2011\microP\Projects\test\test.uvproj
+Project File Date:  09/13/2011
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling bcdadd.s...
+linking...
+Program Size: Code=132 RO-data=304 RW-data=0 ZI-data=1536  
+"test.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+assembling bcdadd.s...
+linking...
+Program Size: Code=136 RO-data=304 RW-data=0 ZI-data=1536  
+"test.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+assembling bcdadd.s...
+linking...
+Program Size: Code=144 RO-data=304 RW-data=0 ZI-data=1536  
+"test.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: Code=144 RO-data=304 RW-data=0 ZI-data=1536  
+"test.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+assembling bcdadd.s...
+linking...
+Program Size: Code=132 RO-data=304 RW-data=0 ZI-data=1536  
+"test.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+assembling bcdadd.s...
+linking...
+Program Size: Code=132 RO-data=304 RW-data=0 ZI-data=1536  
+"test.axf" - 0 Error(s), 0 Warning(s).
