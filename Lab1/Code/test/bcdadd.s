@@ -6,15 +6,24 @@
 
 bcdadd
 
-	MOV r0, #0x00000236	
-	MOV r1, #0x00000387
+	MOV r0, #0x02380000	
+	MOV r1, #0x09000000
+
 	BL add
 	
 
 stop	B stop 
 
+   
+   
+   
+   
+   
    ;assumes well formatted BCDs (i.e. no nibble over 9)
+   ;adds +ve BCDs of 7 nibbles stored in r0 and r1 and returns result in r0
 add
+	push {r2-r7} ;save context of used scratch registers
+	 
 	MOV r4, #0 ;r4 will contain the result
 	MOV r3, #0 ;r2 and r3 are for additions (r3 contains result)
 	MOV	r2, #0
@@ -41,11 +50,16 @@ next
 	LSL r7, #4
 
 	;determine if we need to pursue adding nibbles
-	CMP	r5, #0x0f000000
-	BLT next
+	CMP	r5, #0xf0000000
+	BNE next ;when the comparison produces a result of 0, don't branch again
 
+	;determine if overflow, and set overflow bit if the case
+	TST r4,#0x10000000
+	ORRNE r4,#0x40000000 ;set the overflow bit if there was an overflow
 
-
+	MOV r0, r4	;store result in r0
+	pop {r2-r7} ;restore context
+	
 	BX LR
 
 	END
