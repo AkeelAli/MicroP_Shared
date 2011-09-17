@@ -230,10 +230,10 @@
       <FileType>2</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>20</ColumnNumber>
+      <ColumnNumber>115</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>1</TopLine>
-      <CurrentLine>9</CurrentLine>
+      <TopLine>17</TopLine>
+      <CurrentLine>38</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\bcdadd.s</PathWithFileName>
       <FilenameWithoutPath>bcdadd.s</FilenameWithoutPath>
@@ -255,9 +255,9 @@
         </Doc>
         <Doc>
           <Name>.\bcdadd.s</Name>
-          <ColumnNumber>20</ColumnNumber>
-          <TopLine>1</TopLine>
-          <CurrentLine>9</CurrentLine>
+          <ColumnNumber>115</ColumnNumber>
+          <TopLine>17</TopLine>
+          <CurrentLine>38</CurrentLine>
         </Doc>
       </Documents>
     </MDIGroup>

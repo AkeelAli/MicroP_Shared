@@ -7,58 +7,253 @@ ARM Macro Assembler    Page 1
     1 00000000         
     2 00000000                 AREA             PROGRAM, CODE, READONLY
     3 00000000         
-    4 00000000                 EXPORT           bcdadd
+    4 00000000                 EXPORT           wrapper
     5 00000000                 ENTRY
     6 00000000         
-    7 00000000         bcdadd
-    8 00000000         
-    9 00000000 F04F 700E       MOV              r0, #0x02380000
-   10 00000004 F04F 6110       MOV              r1, #0x09000000
-   11 00000008         
-   12 00000008 F000 F801       BL               add
+    7 00000000         ;wrapper to the bcdadd routine that sends it operands an
+                       d tests the returned sum
+    8 00000000         wrapper
+    9 00000000         ;constructing the numbers to be added
+   10 00000000 F04F 6110       MOV              r1, #0x09000000
+   11 00000004 F04F 4000       MOV              r0, #0x80000000
+   12 00000008 F500 1000       ADD              r0, #0x00200000
    13 0000000C         
-   14 0000000C         
-   15 0000000C E7FE    stop    B                stop
-   16 0000000E         
-   17 0000000E         
-   18 0000000E         
-   19 0000000E         
-   20 0000000E         
-   21 0000000E         
-   22 0000000E         ;assumes well formatted BCDs (i.e. no nibble over 9)
-   23 0000000E         ;adds +ve BCDs of 7 nibbles stored in r0 and r1 and retu
+   14 0000000C F000 F824       BL               bcdadd
+   15 00000010         
+   16 00000010 F1B0 6F08       CMP              r0, #0x08800000
+   17 00000014 D11E            BNE              error
+   18 00000016         
+   19 00000016         ;constructing the numbers to be added
+   20 00000016 F04F 4109       MOV              r1, #0x89000000
+   21 0000001A F04F 4000       MOV              r0, #0x80000000
+   22 0000001E F500 1000       ADD              r0, #0x00200000
+   23 00000022         
+   24 00000022 F000 F819       BL               bcdadd
+   25 00000026         
+   26 00000026 F04F 0200       MOV              r2, #0
+   27 0000002A F102 4209       ADD              r2, r2, #0x89000000
+   28 0000002E F502 1200       ADD              r2, r2, #0x00200000
+   29 00000032 4290            CMP              r0, r2
+   30 00000034 D10E            BNE              error
+   31 00000036         
+   32 00000036         
+   33 00000036         ;constructing the numbers to be added
+   34 00000036 F04F 6010       MOV              r0, #0x09000000
+   35 0000003A F44F 1180       MOV              r1, #0x00100000
+   36 0000003E         
+   37 0000003E F000 F80B       BL               bcdadd
+   38 00000042         
+   39 00000042 F04F 0200       MOV              r2, #0
+   40 00000046 F102 6210       ADD              r2, r2, #0x09000000
+   41 0000004A F502 1280       ADD              r2, r2, #0x00100000
+   42 0000004E 4290            CMP              r0, r2
+   43 00000050 D100            BNE              error
+   44 00000052         
+   45 00000052         
+   46 00000052 E000            B                success
+   47 00000054         
+   48 00000054 E7FE    error   B                error
+   49 00000056         
+   50 00000056 E7FE    success B                success
+   51 00000058         
+   52 00000058         
+   53 00000058         
+   54 00000058         
+   55 00000058         
+   56 00000058         
+   57 00000058         ;bcdadd routine, takes two well formatted BCDs in r0 and
+                        r1, and places their BCD sum in r0
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+   58 00000058         bcdadd
+   59 00000058 B500            push             {LR}
+   60 0000005A         
+   61 0000005A         ;determine if any of r0 and r1 have an overflow
+   62 0000005A F010 4F80       TST              r0, #0x40000000
+   63 0000005E D12C            BNE              overflow
+   64 00000060 F011 4F80       TST              r1, #0x40000000
+   65 00000064 D129            BNE              overflow
+   66 00000066         
+   67 00000066         ;determine sign of r0
+   68 00000066 F010 4F00       TST              r0, #0x80000000
+   69 0000006A D100            BNE              r0Negative
+   70 0000006C E003            B                r0Positive
+   71 0000006E         
+   72 0000006E         r0Negative
+   73 0000006E         ;determine sign of r1
+   74 0000006E F011 4F00       TST              r1, #0x80000000
+   75 00000072 D107            BNE              r0N_r1N
+   76 00000074 E00B            B                r0N_r1P
+   77 00000076         
+   78 00000076         r0Positive
+   79 00000076         ;determine sign of r1
+   80 00000076 F011 4F00       TST              r1, #0x80000000
+   81 0000007A D11A            BNE              r0P_r1N
+   82 0000007C E7FF            B                r0P_r1P
+   83 0000007E         
+   84 0000007E         ;CASE 1: r0 Positive, r1 Positive 
+   85 0000007E         r0P_r1P
+   86 0000007E F000 F838       BL               add
+   87 00000082 E01A            B                checkOverflow ;check overflow o
+                                                            nly if r0 and r1 ar
+                                                            e both same sign
+   88 00000084         
+   89 00000084         ;CASE 2: r0 Negative, r1 Negative
+   90 00000084         r0N_r1N
+   91 00000084 F000 F835       BL               add
+   92 00000088 F040 4000       ORR              r0, #0x80000000 ;set the negati
+                                                            ve bit
+   93 0000008C E015            B                checkOverflow ;check overflow o
+                                                            nly if r0 and r1 ar
+                                                            e both same sign
+   94 0000008E         
+   95 0000008E         ;CASE 3a: r0 Negative, r1 Positive (r1>=|r0|)
+   96 0000008E         r0N_r1P
+   97 0000008E F020 4070       AND              r0, #0x0fffffff ;clear last nib
+                                                            ble since now we've
+                                                             already processed 
+                                                            overflow and sign f
+                                                            lags
+   98 00000092 F021 4170       AND              r1, #0x0fffffff
+   99 00000096         
+  100 00000096 F000 F81A       BL               tensComplement
+  101 0000009A         
+  102 0000009A 4288            CMP              r0, r1
+  103 0000009C DB02            BLT              r0N_r1P_GT
+  104 0000009E         
+  105 0000009E F000 F828       BL               add         ;r1 needs to be lar
+                                                            ger than or equal t
+                                                            o r0 (before comple
+
+
+
+ARM Macro Assembler    Page 3 
+
+
+                                                            ment operation) for
+                                                             the result to be p
+                                                            ositive
+  106 000000A2 E00F            B                stop
+  107 000000A4         
+  108 000000A4         ;CASE 3b: r0 Negative, r1 Positive (r1<|r0|)
+  109 000000A4         r0N_r1P_GT
+  110 000000A4 F000 F825       BL               add
+  111 000000A8 F000 F811       BL               tensComplement
+  112 000000AC         ;add negative sign to result
+  113 000000AC F040 4000       ORR              r0, #0x80000000 ;set the negati
+                                                            ve bit 
+  114 000000B0 E008            B                stop
+  115 000000B2         
+  116 000000B2         ;CASE 2: r0 Positive, r1 Negative
+  117 000000B2         r0P_r1N
+  118 000000B2         ;swap and call case 3
+  119 000000B2 460A            MOV              r2, r1
+  120 000000B4 4601            MOV              r1, r0
+  121 000000B6 4610            MOV              r0, r2
+  122 000000B8 E7E9            B                r0N_r1P
+  123 000000BA         
+  124 000000BA         overflow
+  125 000000BA         
+  126 000000BA         checkOverflow
+  127 000000BA         ;determine if overflow, and set overflow bit if the case
+                       
+  128 000000BA F010 5F80       TST              r0,#0x10000000
+  129 000000BE BF18 F040 
+              4080             ORRNE            r0,#0x40000000 ;set the overflo
+                                                            w bit if there was 
+                                                            an overflow
+  130 000000C4         
+  131 000000C4         stop
+  132 000000C4         ;clear don't care bits for uniformity
+  133 000000C4 F020 5040       AND              r0, #0xCFFFFFFF
+  134 000000C8         
+  135 000000C8 F85D EB04       pop              {LR}
+  136 000000CC 4770            BX               LR
+  137 000000CE         
+  138 000000CE         
+  139 000000CE         
+  140 000000CE         
+  141 000000CE         
+  142 000000CE         
+  143 000000CE         
+  144 000000CE         
+  145 000000CE         
+  146 000000CE         ;computes tensComplement of r0 and stores it in r0
+  147 000000CE         ;assumes properly formatted BCD in r0
+  148 000000CE         tensComplement
+  149 000000CE B502            push             {r1,LR}
+  150 000000D0         
+  151 000000D0         ;constructing the number #0x09999999
+  152 000000D0 F04F 6219       MOV              r2, #0x09900000
+  153 000000D4 F502 2219       ADD              r2, #0x00099000
+  154 000000D8 F502 6219       ADD              r2, #0x00000990
+  155 000000DC F102 0209       ADD              r2, #0x00000009
+  156 000000E0         
+
+
+
+ARM Macro Assembler    Page 4 
+
+
+  157 000000E0         ;9's complement
+  158 000000E0 EBC0 0002       RSB              r0, r0, r2
+  159 000000E4         
+  160 000000E4         ;add one using our adder routine
+  161 000000E4 F04F 0101       MOV              r1, #1
+  162 000000E8 F000 F803       BL               add
+  163 000000EC         
+  164 000000EC E8BD 4002       pop              {r1,LR}
+  165 000000F0 4770            BX               LR
+  166 000000F2         
+  167 000000F2         
+  168 000000F2         
+  169 000000F2         
+  170 000000F2         
+  171 000000F2         
+  172 000000F2         
+  173 000000F2         
+  174 000000F2         ;assumes well formatted BCDs (i.e. no nibble over 9)
+  175 000000F2         ;adds +ve BCDs of 7 nibbles stored in r0 and r1 and retu
                        rns result in r0
-   24 0000000E         add
-   25 0000000E B4FC            push             {r2-r7}     ;save context of us
+  176 000000F2         add
+  177 000000F2 B4FC            push             {r2-r7}     ;save context of us
                                                             ed scratch register
                                                             s
-   26 00000010         
-   27 00000010 F04F 0400       MOV              r4, #0      ;r4 will contain th
+  178 000000F4         
+  179 000000F4 F04F 0400       MOV              r4, #0      ;r4 will contain th
                                                             e result
-   28 00000014 F04F 0300       MOV              r3, #0      ;r2 and r3 are for 
+  180 000000F8 F04F 0300       MOV              r3, #0      ;r2 and r3 are for 
                                                             additions (r3 conta
                                                             ins result)
-   29 00000018 F04F 0200       MOV              r2, #0
-   30 0000001C         
-   31 0000001C         ;values used for special purposes (shifted left after ev
+  181 000000FC F04F 0200       MOV              r2, #0
+  182 00000100         
+  183 00000100         ;values used for special purposes (shifted left after ev
                        ery nibble addition)
-   32 0000001C F04F 050F       MOV              r5, #0x0000000f ;used as mask t
+  184 00000100 F04F 050F       MOV              r5, #0x0000000f ;used as mask t
                                                             o extract nibble
-   33 00000020 F04F 0609       MOV              r6, #0x00000009 ;used to determ
+  185 00000104 F04F 0609       MOV              r6, #0x00000009 ;used to determ
                                                             ine if sum greater 
                                                             than 9
-   34 00000024 F04F 0706       MOV              r7, #0x00000006 ;used to add 6 
+  186 00000108 F04F 0706       MOV              r7, #0x00000006 ;used to add 6 
                                                             to a sum if greater
                                                              than 9
-   35 00000028         
-   36 00000028         next
-   37 00000028 EA00 0205       AND              r2, r0, r5
-   38 0000002C EA01 0305       AND              r3, r1, r5
-   39 00000030         
-   40 00000030 4413            ADD              r3, r2, r3
-   41 00000032         
-   42 00000032 441C            ADD              r4, r4, r3
-   43 00000034 42B4            CMP              r4, r6      ;perform comparison
+  187 0000010C         
+  188 0000010C         next
+  189 0000010C         ;isolate the nimbles to be added
+  190 0000010C EA00 0205       AND              r2, r0, r5
+  191 00000110 EA01 0305       AND              r3, r1, r5
+  192 00000114         
+  193 00000114         ;add the isolated nibbles
+  194 00000114 4413            ADD              r3, r2, r3
+  195 00000116         
+  196 00000116         ;add the new nibble sum to the overall sum
+  197 00000116 441C            ADD              r4, r4, r3
+  198 00000118         
+  199 00000118 42B4            CMP              r4, r6      ;perform comparison
                                                              here in order to i
                                                             nclude carry from p
                                                             revious nibble add 
@@ -66,41 +261,37 @@ ARM Macro Assembler    Page 1
 
 
 
-ARM Macro Assembler    Page 2 
+ARM Macro Assembler    Page 5 
 
 
-   44 00000036 BFC8 443C       ADDGT            r4, r7
-   45 0000003A         
-   46 0000003A         ;shifting of special values
-   47 0000003A         ;note that shifting is not done during operation (using 
+  200 0000011A BFC8 443C       ADDGT            r4, r7
+  201 0000011E         
+  202 0000011E         ;shifting of special values
+  203 0000011E         ;note that shifting is not done during operation (using 
                        barrel shifter) because the shifted value is not persist
                        ed
-   48 0000003A EA4F 1505       LSL              r5, #4
-   49 0000003E EA4F 1606       LSL              r6, #4
-   50 00000042 EA4F 1707       LSL              r7, #4
-   51 00000046         
-   52 00000046         ;determine if we need to pursue adding nibbles
-   53 00000046 F1B5 4F70       CMP              r5, #0xf0000000
-   54 0000004A D1ED            BNE              next        ;when the compariso
+  204 0000011E EA4F 1505       LSL              r5, #4
+  205 00000122 EA4F 1606       LSL              r6, #4      ;shift of r6 replic
+                                                            ates the 9's for co
+                                                            mparison purposes w
+                                                            ith r4
+  206 00000126 F106 0609       ADD              r6, #9
+  207 0000012A EA4F 1707       LSL              r7, #4
+  208 0000012E         
+  209 0000012E         ;determine if we need to pursue adding nibbles
+  210 0000012E F1B5 4F70       CMP              r5, #0xf0000000
+  211 00000132 D1EB            BNE              next        ;when the compariso
                                                             n produces a result
                                                              of 0, don't branch
                                                              again
-   55 0000004C         
-   56 0000004C         ;determine if overflow, and set overflow bit if the case
-                       
-   57 0000004C F014 5F80       TST              r4,#0x10000000
-   58 00000050 BF18 F044 
-              4480             ORRNE            r4,#0x40000000 ;set the overflo
-                                                            w bit if there was 
-                                                            an overflow
-   59 00000056         
-   60 00000056 4620            MOV              r0, r4      ;store result in r0
+  212 00000134         
+  213 00000134 4620            MOV              r0, r4      ;store result in r0
                                                             
-   61 00000058 BCFC            pop              {r2-r7}     ;restore context
-   62 0000005A         
-   63 0000005A 4770            BX               LR
-   64 0000005C         
-   65 0000005C                 END
+  214 00000136 BCFC            pop              {r2-r7}     ;restore context
+  215 00000138         
+  216 00000138 4770            BX               LR
+  217 0000013A         
+  218 0000013A                 END
 Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=bcdadd.d
  -obcdadd.o -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\ARM\INC\ST\STM32F10x --predef
 ine="__EVAL SETA 1" --list=bcdadd.lst bcdadd.s
@@ -118,37 +309,168 @@ Symbol: PROGRAM
    Uses
       None
 Comment: PROGRAM unused
-add 0000000E
+add 000000F2
 
 Symbol: add
    Definitions
-      At line 24 in file bcdadd.s
+      At line 176 in file bcdadd.s
    Uses
-      At line 12 in file bcdadd.s
-Comment: add used once
-bcdadd 00000000
+      At line 86 in file bcdadd.s
+      At line 91 in file bcdadd.s
+      At line 105 in file bcdadd.s
+      At line 110 in file bcdadd.s
+      At line 162 in file bcdadd.s
+
+bcdadd 00000058
 
 Symbol: bcdadd
    Definitions
-      At line 7 in file bcdadd.s
+      At line 58 in file bcdadd.s
    Uses
-      At line 4 in file bcdadd.s
-Comment: bcdadd used once
-next 00000028
+      At line 14 in file bcdadd.s
+      At line 24 in file bcdadd.s
+      At line 37 in file bcdadd.s
+
+checkOverflow 000000BA
+
+Symbol: checkOverflow
+   Definitions
+      At line 126 in file bcdadd.s
+   Uses
+      At line 87 in file bcdadd.s
+      At line 93 in file bcdadd.s
+
+error 00000054
+
+Symbol: error
+   Definitions
+      At line 48 in file bcdadd.s
+   Uses
+      At line 17 in file bcdadd.s
+      At line 30 in file bcdadd.s
+      At line 43 in file bcdadd.s
+      At line 48 in file bcdadd.s
+
+next 0000010C
 
 Symbol: next
    Definitions
-      At line 36 in file bcdadd.s
+      At line 188 in file bcdadd.s
    Uses
-      At line 54 in file bcdadd.s
+      At line 211 in file bcdadd.s
 Comment: next used once
-stop 0000000C
+overflow 000000BA
+
+
+
+ARM Macro Assembler    Page 2 Alphabetic symbol ordering
+Relocatable symbols
+
+
+Symbol: overflow
+   Definitions
+      At line 124 in file bcdadd.s
+   Uses
+      At line 63 in file bcdadd.s
+      At line 65 in file bcdadd.s
+
+r0N_r1N 00000084
+
+Symbol: r0N_r1N
+   Definitions
+      At line 90 in file bcdadd.s
+   Uses
+      At line 75 in file bcdadd.s
+Comment: r0N_r1N used once
+r0N_r1P 0000008E
+
+Symbol: r0N_r1P
+   Definitions
+      At line 96 in file bcdadd.s
+   Uses
+      At line 76 in file bcdadd.s
+      At line 122 in file bcdadd.s
+
+r0N_r1P_GT 000000A4
+
+Symbol: r0N_r1P_GT
+   Definitions
+      At line 109 in file bcdadd.s
+   Uses
+      At line 103 in file bcdadd.s
+Comment: r0N_r1P_GT used once
+r0Negative 0000006E
+
+Symbol: r0Negative
+   Definitions
+      At line 72 in file bcdadd.s
+   Uses
+      At line 69 in file bcdadd.s
+Comment: r0Negative used once
+r0P_r1N 000000B2
+
+Symbol: r0P_r1N
+   Definitions
+      At line 117 in file bcdadd.s
+   Uses
+      At line 81 in file bcdadd.s
+Comment: r0P_r1N used once
+r0P_r1P 0000007E
+
+Symbol: r0P_r1P
+   Definitions
+      At line 85 in file bcdadd.s
+   Uses
+      At line 82 in file bcdadd.s
+Comment: r0P_r1P used once
+r0Positive 00000076
+
+
+
+
+ARM Macro Assembler    Page 3 Alphabetic symbol ordering
+Relocatable symbols
+
+Symbol: r0Positive
+   Definitions
+      At line 78 in file bcdadd.s
+   Uses
+      At line 70 in file bcdadd.s
+Comment: r0Positive used once
+stop 000000C4
 
 Symbol: stop
    Definitions
-      At line 15 in file bcdadd.s
+      At line 131 in file bcdadd.s
    Uses
-      At line 15 in file bcdadd.s
-Comment: stop used once
-5 symbols
-329 symbols in table
+      At line 106 in file bcdadd.s
+      At line 114 in file bcdadd.s
+
+success 00000056
+
+Symbol: success
+   Definitions
+      At line 50 in file bcdadd.s
+   Uses
+      At line 46 in file bcdadd.s
+      At line 50 in file bcdadd.s
+
+tensComplement 000000CE
+
+Symbol: tensComplement
+   Definitions
+      At line 148 in file bcdadd.s
+   Uses
+      At line 100 in file bcdadd.s
+      At line 111 in file bcdadd.s
+
+wrapper 00000000
+
+Symbol: wrapper
+   Definitions
+      At line 8 in file bcdadd.s
+   Uses
+      At line 4 in file bcdadd.s
+Comment: wrapper used once
+18 symbols
+342 symbols in table

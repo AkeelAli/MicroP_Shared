@@ -146,13 +146,14 @@ __Vectors_Size  EQU  __Vectors_End - __Vectors
 ; Reset handler
 Reset_Handler   PROC
                 EXPORT  Reset_Handler             [WEAK]
-                IMPORT  bcdadd
+                IMPORT  wrapper
                 ;IMPORT  SystemInit
                 ;LDR     R0, =SystemInit
                 ;BLX     R0               
-                LDR     R0, =bcdadd
-                BX      R0
-                ENDP
+                LDR     R0, =wrapper
+				BX      R0
+				ENDP
+
                 
 ; Dummy Exception Handlers (infinite loops which can be modified)
 
