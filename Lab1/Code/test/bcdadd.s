@@ -7,9 +7,8 @@
 	;wrapper to the bcdadd routine that sends it operands and tests the returned sum
 wrapper
 				;constructing the numbers to be added
-				MOV r1, #0x09000000	
-				MOV r0, #0x80000000
-				ADD r0, #0x00200000
+				LDR r1, =0x09000000	
+				LDR r0, =0x80200000
                 
 				BL bcdadd
 
@@ -17,15 +16,12 @@ wrapper
 				BNE error
 
 				;constructing the numbers to be added
-				MOV r1, #0x89000000	
-				MOV r0, #0x80000000
-				ADD r0, #0x00200000
+				LDR r1, =0x89000000	
+				LDR r0, =0x80200000
                 
 				BL bcdadd
 
-				MOV r2, #0
-				ADD r2, r2, #0x89000000
-				ADD r2, r2, #0x00200000
+				LDR r2, =0x89200000
 				CMP r0, r2
 				BNE error
 
@@ -36,9 +32,7 @@ wrapper
                 
 				BL bcdadd
 
-				MOV r2, #0
-				ADD r2, r2, #0x09000000
-				ADD r2, r2, #0x00100000
+				LDR r2, =0x09100000
 				CMP r0, r2
 				BNE error
 

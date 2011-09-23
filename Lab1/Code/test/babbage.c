@@ -73,6 +73,8 @@ void babbage(unsigned int PolyOrder, unsigned int NumItems, bcd32_t* Elements) {
 
 	for (x=0;x<13;x++)
 		printf("%d ",results[x]);
+
+	free(results);
 }
 
 // other functions come here, if needed
