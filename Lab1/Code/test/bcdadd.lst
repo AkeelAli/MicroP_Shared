@@ -213,7 +213,7 @@ ARM Macro Assembler    Page 4
                                                             ve bit 
   170 000000E6 E008            B                stop
   171 000000E8         
-  172 000000E8         ;CASE 2: r0 Positive, r1 Negative
+  172 000000E8         ;CASE 4: r0 Positive, r1 Negative
   173 000000E8         r0P_r1N
   174 000000E8         ;swap and call case 3
   175 000000E8 460A            MOV              r2, r1
@@ -313,7 +313,7 @@ ARM Macro Assembler    Page 5
                                                             to a sum if greater
                                                              than 9
   246 0000013E         
-  247 0000013E         next
+  247 0000013E         nibble_add_loop
   248 0000013E         ;isolate the nimbles to be added
   249 0000013E EA00 0205       AND              r2, r0, r5
   250 00000142 EA01 0305       AND              r3, r1, r5
@@ -351,10 +351,10 @@ ARM Macro Assembler    Page 6
   267 00000160         
   268 00000160         ;determine if we need to pursue adding nibbles
   269 00000160 F1B5 4F70       CMP              r5, #0xf0000000
-  270 00000164 D1EB            BNE              next        ;when the compariso
-                                                            n produces a result
-                                                             of 0, don't branch
-                                                             again
+  270 00000164 D1EB            BNE              nibble_add_loop ;when the compa
+                                                            rison produces a re
+                                                            sult of 0, don't br
+                                                            anch again
   271 00000166         
   272 00000166 4620            MOV              r0, r4      ;store result in r0
                                                             
@@ -454,14 +454,14 @@ Relocatable symbols
       At line 100 in file bcdadd.s
       At line 104 in file bcdadd.s
 
-next 0000013E
+nibble_add_loop 0000013E
 
-Symbol: next
+Symbol: nibble_add_loop
    Definitions
       At line 247 in file bcdadd.s
    Uses
       At line 270 in file bcdadd.s
-Comment: next used once
+Comment: nibble_add_loop used once
 overflow 00000104
 
 Symbol: overflow

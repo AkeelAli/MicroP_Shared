@@ -169,7 +169,7 @@ r0N_r1P_GT
 	ORR r0, #0x80000000 ;set the negative bit 
 	B stop
 
-;CASE 2: r0 Positive, r1 Negative
+;CASE 4: r0 Positive, r1 Negative
 r0P_r1N
 	;swap and call case 3
 	MOV r2, r1
@@ -244,7 +244,7 @@ add
 	MOV r6, #0x00000009	;used to determine if sum greater than 9
 	MOV r7, #0x00000006 ;used to add 6 to a sum if greater than 9
 		
-next
+nibble_add_loop
 	;isolate the nimbles to be added
 	AND r2, r0, r5
 	AND r3, r1, r5
@@ -267,7 +267,7 @@ next
 
 	;determine if we need to pursue adding nibbles
 	CMP	r5, #0xf0000000
-	BNE next ;when the comparison produces a result of 0, don't branch again
+	BNE nibble_add_loop ;when the comparison produces a result of 0, don't branch again
 
 	MOV r0, r4	;store result in r0
 	pop {r2-r7} ;restore context
