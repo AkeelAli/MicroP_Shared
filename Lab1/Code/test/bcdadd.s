@@ -6,37 +6,99 @@
 
 	;wrapper to the bcdadd routine that sends it operands and tests the returned sum
 wrapper
-				;constructing the numbers to be added
-				LDR r1, =0x09000000	
-				LDR r0, =0x80200000
+				;test cases
+				;CASE 1: ro+, r1+
+				LDR r1, =0x00762500	
+				LDR r0, =0x00309380
                 
 				BL bcdadd
 
-				CMP r0, #0x08800000
+				LDR r2, =0x01071880
+				CMP r0, r2
 				BNE error
 
-				;constructing the numbers to be added
-				LDR r1, =0x89000000	
-				LDR r0, =0x80200000
+				;CASE 2: r0-,r1-
+				LDR r1, =0x80039785
+				LDR r0, =0x80139962
                 
 				BL bcdadd
 
-				LDR r2, =0x89200000
+				LDR r2, =0x80179747
 				CMP r0, r2
 				BNE error
 
 
-				;constructing the numbers to be added
-				MOV r0, #0x09000000	
-				MOV r1, #0x00100000
+				;CASE 3a: r0+, r1- (|ro|>|r1|)
+				LDR r0, =0x09656000	
+				LDR r1, =0x87847000
                 
 				BL bcdadd
 
-				LDR r2, =0x09100000
+				LDR r2, =0x01809000
 				CMP r0, r2
 				BNE error
 
+				;CASE 3b: r0+, r1- (|ro|<|r1|)
+				LDR r0, =0x07847000	
+				LDR r1, =0x89656000
+                
+				BL bcdadd
 
+				LDR r2, =0x81809000
+				CMP r0, r2
+				BNE error
+
+				;CASE 3c: r0+, r1- (|ro|=|r1|)
+				LDR r0, =0x09656000	
+				LDR r1, =0x89656000
+                
+				BL bcdadd
+
+				LDR r2, =0x00000000
+				CMP r0, r2
+				BNE error
+
+				
+				;CASE 4a: r0-, r1+ (|ro|>|r1|)
+				LDR r0, =0x89656000	
+				LDR r1, =0x07847000
+                
+				BL bcdadd
+
+				LDR r2, =0x81809000
+				CMP r0, r2
+				BNE error
+
+				;CASE 4b: r0-, r1+ (|ro|<|r1|)
+				LDR r0, =0x87847000	
+				LDR r1, =0x09656000
+                
+				BL bcdadd
+
+				LDR r2, =0x01809000
+				CMP r0, r2
+				BNE error
+
+				;CASE 4c: r0-, r1+ (|ro|=|r1|)
+				LDR r0, =0x89656000	
+				LDR r1, =0x09656000
+                
+				BL bcdadd
+
+				LDR r2, =0x00000000
+				CMP r0, r2
+				BNE error
+
+				;CASE 5: r0 , r1 have an overflow to start with
+				LDR r0, =0xF9656000	
+				LDR r1, =0x09656000
+                
+				BL bcdadd
+
+				LDR r2, =0x30000000
+				CMP r0, r2
+				BNE error
+				   
 				B success
 
 error	B error
@@ -91,16 +153,16 @@ r0N_r1P
 	AND r0, #0x0fffffff ;clear last nibble since now we've already processed overflow and sign flags
 	AND r1, #0x0fffffff
 
-	BL tensComplement 
-	
-	CMP r0, r1
-	BLT r0N_r1P_GT
-	
+	CMP r0, r1	;moved comparison before the first tensComplement (didn't work after)
+	BGT r0N_r1P_GT
+
+	BL tensComplement 	
 	BL add ;r1 needs to be larger than or equal to r0 (before complement operation) for the result to be positive
 	B stop	
 
 ;CASE 3b: r0 Negative, r1 Positive (r1<|r0|)
 r0N_r1P_GT
+	BL tensComplement 
 	BL add
 	BL tensComplement
 	;add negative sign to result
@@ -115,8 +177,8 @@ r0P_r1N
 	MOV r0, r2
 	B r0N_r1P
 
-overflow
 
+;normal exits
 checkOverflow
 	;determine if overflow, and set overflow bit if the case
 	TST r0,#0x10000000
@@ -129,6 +191,12 @@ stop
 	pop {LR}
 	BX LR
 
+;abnormal exits
+overflow
+	LDR r0, =0x30000000 ;return special value if passed values have overflow to begin with
+	
+	pop {LR}
+	BX LR
  
  
  
@@ -143,10 +211,7 @@ tensComplement
 	push {r1,LR}
 	
 	;constructing the number #0x09999999
-	MOV r2, #0x09900000
-	ADD r2, #0x00099000
-	ADD r2, #0x00000990
-	ADD r2, #0x00000009
+	LDR r2, =0x09999999
 
 	;9's complement
 	RSB r0, r0, r2
