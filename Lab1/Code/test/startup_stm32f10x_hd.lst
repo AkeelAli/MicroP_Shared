@@ -248,13 +248,13 @@ ARM Macro Assembler    Page 4
                                PROC
   148 00000000                 EXPORT           Reset_Handler             [WEAK
 ]
-  149 00000000         ;IMPORT __main
-  150 00000000                 IMPORT           wrapper
+  149 00000000                 IMPORT           __main
+  150 00000000         ;IMPORT  wrapper
   151 00000000         ;IMPORT  SystemInit
   152 00000000         ;LDR     R0, =SystemInit
   153 00000000         ;BLX     R0               
-  154 00000000 4808            LDR              R0, =wrapper
-  155 00000002         ;LDR R0, =__main
+  154 00000000         ;LDR     R0, =wrapper
+  155 00000000 4808            LDR              R0, =__main
   156 00000002 4700            BX               R0
   157 00000004                 ENDP
   158 00000004         
@@ -1440,13 +1440,13 @@ Comment: __Vectors_Size used once
 ARM Macro Assembler    Page 1 Alphabetic symbol ordering
 External symbols
 
-wrapper 00000000
+__main 00000000
 
-Symbol: wrapper
+Symbol: __main
    Definitions
-      At line 150 in file startup_stm32f10x_hd.s
+      At line 149 in file startup_stm32f10x_hd.s
    Uses
-      At line 154 in file startup_stm32f10x_hd.s
-Comment: wrapper used once
+      At line 155 in file startup_stm32f10x_hd.s
+Comment: __main used once
 1 symbol
 415 symbols in table

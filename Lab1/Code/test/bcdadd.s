@@ -2,6 +2,7 @@
 	AREA	PROGRAM, CODE, READONLY
 
 	EXPORT wrapper
+	EXPORT bcdadd
 	ENTRY
 
 	;wrapper to the bcdadd routine that sends it operands and tests the returned sum
