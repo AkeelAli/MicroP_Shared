@@ -142,23 +142,6 @@
           <Name>-O14 -S0 -C0 -N00("ARM Cortex-M3") -D00(1BA00477) -L00(4) -FO7 -FD20000000 -FC800 -FN1 -FF0STM32F10x_512 -FS08000000 -FL080000)</Name>
         </SetRegEntry>
       </TargetDriverDllRegistry>
-      <Breakpoint>
-        <Bp>
-          <Number>0</Number>
-          <Type>0</Type>
-          <LineNumber>81</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>134218342</Address>
-          <ByteObject>0</ByteObject>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>C:\Users\Akeel\McGill\Fall 2011\microP\MicroP_Shared\Lab1\Code\test\babbage.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression></Expression>
-        </Bp>
-      </Breakpoint>
       <DebugFlag>
         <trace>0</trace>
         <periodic>1</periodic>
@@ -215,10 +198,10 @@
       <FileType>2</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>24</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>88</TopLine>
-      <CurrentLine>116</CurrentLine>
+      <TopLine>251</TopLine>
+      <CurrentLine>251</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\bcdadd.s</PathWithFileName>
       <FilenameWithoutPath>bcdadd.s</FilenameWithoutPath>
@@ -245,8 +228,8 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>76</TopLine>
-      <CurrentLine>81</CurrentLine>
+      <TopLine>1</TopLine>
+      <CurrentLine>9</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\babbage.c</PathWithFileName>
       <FilenameWithoutPath>babbage.c</FilenameWithoutPath>
@@ -272,7 +255,7 @@
     <ActiveMDIGroup>0</ActiveMDIGroup>
     <MDIGroup>
       <Size>100</Size>
-      <ActiveTab>1</ActiveTab>
+      <ActiveTab>2</ActiveTab>
       <Documents>
         <Doc>
           <Name>.\startup_stm32f10x_hd.s</Name>
@@ -282,9 +265,9 @@
         </Doc>
         <Doc>
           <Name>.\bcdadd.s</Name>
-          <ColumnNumber>0</ColumnNumber>
-          <TopLine>88</TopLine>
-          <CurrentLine>116</CurrentLine>
+          <ColumnNumber>24</ColumnNumber>
+          <TopLine>251</TopLine>
+          <CurrentLine>251</CurrentLine>
         </Doc>
         <Doc>
           <Name>bcd.h</Name>
@@ -295,8 +278,8 @@
         <Doc>
           <Name>.\babbage.c</Name>
           <ColumnNumber>0</ColumnNumber>
-          <TopLine>76</TopLine>
-          <CurrentLine>81</CurrentLine>
+          <TopLine>1</TopLine>
+          <CurrentLine>9</CurrentLine>
         </Doc>
         <Doc>
           <Name>.\debugger.c</Name>

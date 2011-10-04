@@ -61,7 +61,8 @@ void main(void){ // main neither has arguments nor returns anything
 void babbage(unsigned int PolyOrder, unsigned int NumItems, bcd32_t* Elements) { // Your code
 	//must perform checks that all arguments are properly sent
 
-	//this method uses only 1 array and overwrites no-longer-needed values with differences
+	//this method uses the passed Elements array to store differences and sums (and eventually results)
+	//a temporary array is used to store initial values
 	//uses a moving window of 2 elements
 
 	//declarations
@@ -71,11 +72,11 @@ void babbage(unsigned int PolyOrder, unsigned int NumItems, bcd32_t* Elements) {
 	//scratch x for iteration
 	int x;
 
-	//copy the Elements into an array which will contain results
-	bcd32_t* results;
-	results=(bcd32_t*)malloc(sizeof(bcd32_t)*NumItems);
-	for (x=0;x<NumItems;x++){
-		results[x]=Elements[x];
+	//copy the initial values from Elements into an array (as they will be overwritten with diffs/sums)
+	bcd32_t* tempInitial;
+	tempInitial=(bcd32_t*)malloc(sizeof(bcd32_t)*PolyOrder+1);
+	for (x=0;x<PolyOrder+1;x++){
+		tempInitial[x]=Elements[x];
 	}
 
 	//obtain the differences till constant row
@@ -90,23 +91,26 @@ void babbage(unsigned int PolyOrder, unsigned int NumItems, bcd32_t* Elements) {
 	}
 
 	//perform sums to obtain new results (result will be placed in last non-zero cell)
-	//TODO improve on this by switching the arrays (let the given one be for results, and 
-	//create a small one as big as non-zero elements)
 	resultsI=PolyOrder+1;
 	while (resultsI<NumItems){
 		for(i=0;i<PolyOrder;i++){
 			Elements[i+1]=bcdadd(Elements[i],Elements[i+1]);
 		}
 		//copy last computed sum which will be a result of the function
-		results[resultsI]=Elements[i];
+		Elements[resultsI]=Elements[i];
 		resultsI++;
+	}
+
+	//copy over to Elements the initial values that were overwritten
+	for (x=0;x<PolyOrder+1;x++){
+		Elements[x]=tempInitial[x];
 	}
 
 	printf("Results: ");
 		for (x=0;x<NumItems;x++)
-			printf("%x ", results[x]);
+			printf("%x ", Elements[x]);
 	printf("\n");
 
 
-	free(results);
+	free(tempInitial);
 }
