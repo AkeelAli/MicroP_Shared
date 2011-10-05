@@ -149,7 +149,14 @@ r0N_r1N
 	ORR r0, #0x80000000 ;set the negative bit
 	B checkOverflow	 ;check overflow only if r0 and r1 are both same sign
 
-;CASE 3a: r0 Negative, r1 Positive (r1>=|r0|)
+;CASE 3: r0 Positive, r1 Negative
+r0P_r1N
+	;swap and move on to case 4 (no branch needed, just roll off)
+	MOV r2, r1
+	MOV r1, r0
+	MOV r0, r2
+
+;CASE 4a: r0 Negative, r1 Positive (r1>=|r0|)
 r0N_r1P
 	AND r0, #0x0fffffff ;clear last nibble since now we've already processed overflow and sign flags
 	AND r1, #0x0fffffff
@@ -161,7 +168,7 @@ r0N_r1P
 	BL add ;r1 needs to be larger than or equal to r0 (before complement operation) for the result to be positive
 	B stop	
 
-;CASE 3b: r0 Negative, r1 Positive (r1<|r0|)
+;CASE 4b: r0 Negative, r1 Positive (r1<|r0|)
 r0N_r1P_GT
 	BL tensComplement 
 	BL add
@@ -169,14 +176,6 @@ r0N_r1P_GT
 	;add negative sign to result
 	ORR r0, #0x80000000 ;set the negative bit 
 	B stop
-
-;CASE 4: r0 Positive, r1 Negative
-r0P_r1N
-	;swap and call case 3
-	MOV r2, r1
-	MOV r1, r0
-	MOV r0, r2
-	B r0N_r1P
 
 
 ;normal exits
