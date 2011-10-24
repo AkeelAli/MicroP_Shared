@@ -128,7 +128,7 @@
           <Target>
             <UseTarget>1</UseTarget>
             <LoadApplicationAtStartup>1</LoadApplicationAtStartup>
-            <RunToMain>0</RunToMain>
+            <RunToMain>1</RunToMain>
             <RestoreBreakpoints>1</RestoreBreakpoints>
             <RestoreWatchpoints>1</RestoreWatchpoints>
             <RestoreMemoryDisplay>1</RestoreMemoryDisplay>
@@ -384,27 +384,22 @@
       </TargetOption>
       <Groups>
         <Group>
-          <GroupName>Source Group 1</GroupName>
+          <GroupName>Assembly</GroupName>
           <Files>
             <File>
               <FileName>startup_stm32f10x_hd.s</FileName>
               <FileType>2</FileType>
               <FilePath>.\startup_stm32f10x_hd.s</FilePath>
             </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Source</GroupName>
+          <Files>
             <File>
-              <FileName>LSM303DLH.c</FileName>
+              <FileName>stm32f10x_rcc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\LSM303DLH.c</FilePath>
-            </File>
-            <File>
-              <FileName>main.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\main.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f10x_gpio.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\stm32f10x_gpio.c</FilePath>
+              <FilePath>.\stm32f10x_rcc.c</FilePath>
             </File>
             <File>
               <FileName>stm32f10x_i2c.c</FileName>
@@ -412,14 +407,39 @@
               <FilePath>.\stm32f10x_i2c.c</FilePath>
             </File>
             <File>
-              <FileName>stm32f10x_rcc.c</FileName>
+              <FileName>stm32f10x_gpio.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\stm32f10x_rcc.c</FilePath>
+              <FilePath>.\stm32f10x_gpio.c</FilePath>
             </File>
             <File>
-              <FileName>HAL_LSM303DLH.h</FileName>
+              <FileName>main.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\main.c</FilePath>
+            </File>
+            <File>
+              <FileName>LSM303DLH.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\LSM303DLH.c</FilePath>
+            </File>
+            <File>
+              <FileName>iNEMO_led.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\iNEMO_led.c</FilePath>
+            </File>
+            <File>
+              <FileName>acc_lib.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\acc_lib.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Headers</GroupName>
+          <Files>
+            <File>
+              <FileName>stm32f10x_conf.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\HAL_LSM303DLH.h</FilePath>
+              <FilePath>.\stm32f10x_conf.h</FilePath>
             </File>
             <File>
               <FileName>LSM303DLH.h</FileName>
@@ -427,9 +447,14 @@
               <FilePath>.\LSM303DLH.h</FilePath>
             </File>
             <File>
-              <FileName>stm32f10x_conf.h</FileName>
+              <FileName>HAL_LSM303DLH.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\stm32f10x_conf.h</FilePath>
+              <FilePath>.\HAL_LSM303DLH.h</FilePath>
+            </File>
+            <File>
+              <FileName>iNEMO_led.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\iNEMO_led.h</FilePath>
             </File>
           </Files>
         </Group>

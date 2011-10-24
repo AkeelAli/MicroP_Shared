@@ -4,161 +4,68 @@
 <h1>µVision Build Log</h1>
 <h2>Project:</h2>
 C:\Users\Akeel\McGill\Fall 2011\microP\MicroP_Shared\Lab2\lab2.uvproj
-Project File Date:  10/15/2011
+Project File Date:  10/17/2011
 
 <h2>Output:</h2>
 Build target 'Target 1'
 assembling startup_stm32f10x_hd.s...
-compiling LSM303DLH.c...
-C:\Keil\ARM\INC\ST\STM32F10x\stm32f10x.h(80): error:  #35: #error directive: "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
-compiling main.c...
-C:\Keil\ARM\INC\ST\STM32F10x\stm32f10x.h(80): error:  #35: #error directive: "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
-compiling stm32f10x_gpio.c...
-stm32f10x_gpio.c(174): error:  #20: identifier "uint32_t" is undefined
-stm32f10x_gpio.c(175): error:  #20: identifier "uint32_t" is undefined
-stm32f10x_gpio.c(182): error:  #20: identifier "uint32_t" is undefined
-stm32f10x_gpio.c(182): error:  #18: expected a ")"
-stm32f10x_gpio.c(182): error:  #18: expected a ")"
-stm32f10x_gpio.c(183): error:  #18: expected a ")"
-stm32f10x_gpio.c(183): error:  #18: expected a ")"
-stm32f10x_gpio.c(188): error:  #65: expected a ";"
-stm32f10x_gpio.c(192): error:  #18: expected a ")"
-stm32f10x_gpio.c(197): error:  #18: expected a ")"
-stm32f10x_gpio.c(204): error:  #18: expected a ")"
-stm32f10x_gpio.c(211): error:  #18: expected a ")"
-stm32f10x_gpio.c(218): error:  #18: expected a ")"
-stm32f10x_gpio.c(232): error:  #18: expected a ")"
-stm32f10x_gpio.c(239): error:  #18: expected a ")"
-stm32f10x_gpio.c(246): error:  #18: expected a ")"
-stm32f10x_gpio.c(251): error:  #18: expected a ")"
-stm32f10x_gpio.c(280): error:  #20: identifier "uint8_t" is undefined
-stm32f10x_gpio.c(280): error:  #20: identifier "uint16_t" is undefined
-stm32f10x_gpio.c(282): error:  #20: identifier "uint8_t" is undefined
-stm32f10x_gpio.c(288): error:  #20: identifier "uint32_t" is undefined
-stm32f10x_gpio.c(288): error:  #18: expected a ")"
-stm32f10x_gpio.c(290): error:  #20: identifier "uint8_t" is undefined
-stm32f10x_gpio.c(290): error:  #65: expected a ";"
-stm32f10x_gpio.c(294): error:  #20: identifier "uint8_t" is undefined
-stm32f10x_gpio.c(294): error:  #65: expected a ";"
-stm32f10x_gpio.c(296): warning:  #1166-D: returning pointer to local variable
-stm32f10x_gpio.c(304): error:  #20: identifier "uint16_t" is undefined
-stm32f10x_gpio.c(309): error:  #20: identifier "uint16_t" is undefined
-stm32f10x_gpio.c(309): error:  #18: expected a ")"
-stm32f10x_gpio.c(319): error:  #20: identifier "uint8_t" is undefined
-compiling stm32f10x_i2c.c...
-stm32f10x_i2c.c(192): error:  #20: identifier "uint16_t" is undefined
-stm32f10x_i2c.c(193): error:  #20: identifier "uint16_t" is undefined
-stm32f10x_i2c.c(194): error:  #20: identifier "uint32_t" is undefined
-stm32f10x_i2c.c(209): error:  #20: identifier "uint16_t" is undefined
-stm32f10x_i2c.c(209): error:  #18: expected a ")"
-stm32f10x_i2c.c(221): error:  #18: expected a ")"
-stm32f10x_i2c.c(259): error:  #18: expected a ")"
-stm32f10x_i2c.c(262): error:  #65: expected a ";"
-stm32f10x_i2c.c(265): error:  #18: expected a ")"
-stm32f10x_i2c.c(267): error:  #18: expected a ")"
-stm32f10x_i2c.c(267): error:  #18: expected a ")"
-stm32f10x_i2c.c(267): error:  #18: expected a ")"
-stm32f10x_i2c.c(273): error:  #18: expected a ")"
-stm32f10x_i2c.c(279): error:  #18: expected a ")"
-stm32f10x_i2c.c(283): error:  #20: identifier "uint32_t" is undefined
-stm32f10x_i2c.c(283): error:  #18: expected a ")"
-stm32f10x_i2c.c(329): error:  #20: identifier "uint16_t" is undefined
-stm32f10x_i2c.c(329): error:  #18: expected a ")"
-stm32f10x_i2c.c(334): error:  #20: identifier "uint16_t" is undefined
-stm32f10x_i2c.c(334): error:  #18: expected a ")"
-stm32f10x_i2c.c(353): error:  #20: identifier "uint16_t" is undefined
-stm32f10x_i2c.c(353): error:  #18: expected a ")"
-stm32f10x_i2c.c(358): error:  #20: identifier "uint16_t" is undefined
-stm32f10x_i2c.c(358): error:  #18: expected a ")"
-stm32f10x_i2c.c(377): error:  #20: identifier "uint16_t" is undefined
-stm32f10x_i2c.c(377): error:  #18: expected a ")"
-stm32f10x_i2c.c(382): error:  #20: identifier "uint16_t" is undefined
-stm32f10x_i2c.c(382): error:  #18: expected a ")"
-stm32f10x_i2c.c(401): error:  #20: identifier "uint16_t" is undefined
-stm32f10x_i2c.c(401): error:  #18: expected a ")"
 compiling stm32f10x_rcc.c...
-stm32f10x_rcc.c(202): error:  #20: identifier "__I" is undefined
-stm32f10x_rcc.c(202): error:  #65: expected a ";"
-stm32f10x_rcc.c(203): error:  #20: identifier "__I" is undefined
-stm32f10x_rcc.c(203): error:  #65: expected a ";"
-stm32f10x_rcc.c(229): error:  #20: identifier "uint32_t" is undefined
-stm32f10x_rcc.c(229): error:  #65: expected a ";"
-stm32f10x_rcc.c(233): error:  #65: expected a ";"
-stm32f10x_rcc.c(239): error:  #65: expected a ";"
-stm32f10x_rcc.c(242): error:  #65: expected a ";"
-stm32f10x_rcc.c(245): error:  #65: expected a ";"
-stm32f10x_rcc.c(279): error:  #20: identifier "uint32_t" is undefined
-stm32f10x_rcc.c(285): error:  #20: identifier "uint32_t" is undefined
-stm32f10x_rcc.c(285): error:  #18: expected a ")"
-stm32f10x_rcc.c(287): error:  #18: expected a ")"
-stm32f10x_rcc.c(293): error:  #18: expected a ")"
-stm32f10x_rcc.c(298): error:  #18: expected a ")"
-stm32f10x_rcc.c(298): error:  #18: expected a ")"
-stm32f10x_rcc.c(315): error:  #20: identifier "__IO" is undefined
-stm32f10x_rcc.c(315): error:  #65: expected a ";"
-stm32f10x_rcc.c(323): error:  #20: identifier "StartUpCounter" is undefined
-stm32f10x_rcc.c(324): error:  #20: identifier "StartUpCounter" is undefined
-stm32f10x_rcc.c(324): error:  #20: identifier "uint16_t" is undefined
-stm32f10x_rcc.c(324): error:  #18: expected a ")"
-stm32f10x_rcc.c(343): error:  #757: variable "uint8_t" is not a type name
-stm32f10x_rcc.c(345): error:  #20: identifier "uint32_t" is undefined
-stm32f10x_rcc.c(350): error:  #20: identifier "uint32_t" is undefined
-stm32f10x_rcc.c(350): error:  #18: expected a ")"
-stm32f10x_rcc.c(352): error:  #65: expected a ";"
-stm32f10x_rcc.c(367): error:  #20: identifier "__IO" is undefined
-stm32f10x_rcc.c(367): error:  #18: expected a ")"
-Target not created
-Clean started: Project: 'lab2'
-   deleting intermediate output files for target 'Target 1'
-Clean started: Project: 'lab2'
-   deleting intermediate output files for target 'Target 1'
-Build target 'Target 1'
-assembling startup_stm32f10x_hd.s...
-compiling LSM303DLH.c...
-compiling main.c...
-compiling stm32f10x_gpio.c...
 compiling stm32f10x_i2c.c...
-compiling stm32f10x_rcc.c...
+compiling stm32f10x_gpio.c...
+compiling main.c...
+main.c(50): warning:  #111-D: statement is unreachable
+compiling LSM303DLH.c...
+compiling iNEMO_led.c...
+compiling acc_lib.c...
 linking...
-lab2.axf: Error: L6218E: Undefined symbol SystemInit (referred from startup_stm32f10x_hd.o).
-Target not created
+Program Size: Code=14192 RO-data=488 RW-data=68 ZI-data=3236  
+"lab2.axf" - 0 Error(s), 1 Warning(s).
+Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
 Build target 'Target 1'
-assembling startup_stm32f10x_hd.s...
-compiling LSM303DLH.c...
-compiling main.c...
-compiling stm32f10x_gpio.c...
-compiling stm32f10x_i2c.c...
-compiling stm32f10x_rcc.c...
+compiling acc_lib.c...
 linking...
-Program Size: Code=328 RO-data=320 RW-data=0 ZI-data=1632  
+Program Size: Code=14192 RO-data=488 RW-data=68 ZI-data=3236  
+"lab2.axf" - 0 Error(s), 0 Warning(s).
+Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling acc_lib.c...
+linking...
+Program Size: Code=14208 RO-data=488 RW-data=68 ZI-data=3236  
+"lab2.axf" - 0 Error(s), 0 Warning(s).
+Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling acc_lib.c...
+linking...
+Program Size: Code=14208 RO-data=488 RW-data=68 ZI-data=3236  
 "lab2.axf" - 0 Error(s), 0 Warning(s).
 Build target 'Target 1'
-assembling startup_stm32f10x_hd.s...
-compiling LSM303DLH.c...
-compiling main.c...
-compiling stm32f10x_gpio.c...
-compiling stm32f10x_i2c.c...
-compiling stm32f10x_rcc.c...
 linking...
-Program Size: Code=328 RO-data=320 RW-data=0 ZI-data=1632  
+Program Size: Code=14208 RO-data=488 RW-data=68 ZI-data=3236  
 "lab2.axf" - 0 Error(s), 0 Warning(s).
 Build target 'Target 1'
-assembling startup_stm32f10x_hd.s...
-compiling LSM303DLH.c...
-compiling main.c...
-compiling stm32f10x_gpio.c...
-compiling stm32f10x_i2c.c...
-compiling stm32f10x_rcc.c...
+compiling acc_lib.c...
 linking...
-Program Size: Code=7600 RO-data=336 RW-data=20 ZI-data=1636  
+Program Size: Code=14208 RO-data=488 RW-data=68 ZI-data=3236  
 "lab2.axf" - 0 Error(s), 0 Warning(s).
+Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
 Build target 'Target 1'
-assembling startup_stm32f10x_hd.s...
-compiling stm32f10x_rcc.c...
-compiling stm32f10x_i2c.c...
-compiling stm32f10x_gpio.c...
-compiling main.c...
-compiling LSM303DLH.c...
+compiling acc_lib.c...
 linking...
-Program Size: Code=328 RO-data=320 RW-data=0 ZI-data=1632  
+Program Size: Code=14216 RO-data=488 RW-data=68 ZI-data=3236  
 "lab2.axf" - 0 Error(s), 0 Warning(s).
+Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.

@@ -128,7 +128,7 @@
           <Target>
             <UseTarget>1</UseTarget>
             <LoadApplicationAtStartup>1</LoadApplicationAtStartup>
-            <RunToMain>0</RunToMain>
+            <RunToMain>1</RunToMain>
             <RestoreBreakpoints>1</RestoreBreakpoints>
             <RestoreWatchpoints>1</RestoreWatchpoints>
             <RestoreMemoryDisplay>1</RestoreMemoryDisplay>
@@ -421,6 +421,16 @@
               <FileType>1</FileType>
               <FilePath>.\LSM303DLH.c</FilePath>
             </File>
+            <File>
+              <FileName>iNEMO_led.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\iNEMO_led.c</FilePath>
+            </File>
+            <File>
+              <FileName>acc_lib.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\acc_lib.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -440,6 +450,16 @@
               <FileName>HAL_LSM303DLH.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\HAL_LSM303DLH.h</FilePath>
+            </File>
+            <File>
+              <FileName>iNEMO_led.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\iNEMO_led.h</FilePath>
+            </File>
+            <File>
+              <FileName>acc_lib.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\acc_lib.h</FilePath>
             </File>
           </Files>
         </Group>
