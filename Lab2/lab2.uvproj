@@ -346,7 +346,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>"C:\Program Files (x86)\STMicroelectronics\iNEMO Suite\Firmware\Common\STM32F10xFWLib\v3_3_0\Libraries\STM32F10x_StdPeriph_Driver\inc";"C:\Program Files (x86)\STMicroelectronics\iNEMO Suite\Firmware\Common\STM32F10xFWLib\v3_3_0\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x";"C:\Users\Akeel\McGill\Fall 2011\microP\MicroP_Shared\Lab2"</IncludePath>
+              <IncludePath>"C:\Program Files (x86)\STMicroelectronics\iNEMO Suite\Firmware\Common\STM32F10xFWLib\v3_3_0\Libraries\STM32F10x_StdPeriph_Driver\inc";"C:\Program Files (x86)\STMicroelectronics\iNEMO Suite\Firmware\Common\STM32F10xFWLib\v3_3_0\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x";..\Lab2</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -430,6 +430,16 @@
               <FileName>acc_lib.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\acc_lib.c</FilePath>
+            </File>
+            <File>
+              <FileName>FIRFilter.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\FIRFilter.c</FilePath>
+            </File>
+            <File>
+              <FileName>FIRFilter.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\FIRFilter.h</FilePath>
             </File>
           </Files>
         </Group>

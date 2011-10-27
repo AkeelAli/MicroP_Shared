@@ -4,68 +4,26 @@
 <h1>µVision Build Log</h1>
 <h2>Project:</h2>
 C:\Users\Akeel\McGill\Fall 2011\microP\MicroP_Shared\Lab2\lab2.uvproj
-Project File Date:  10/17/2011
+Project File Date:  10/24/2011
 
 <h2>Output:</h2>
+Build target 'Target 1'
+linking...
+Program Size: Code=15832 RO-data=488 RW-data=116 ZI-data=3308  
+"lab2.axf" - 0 Error(s), 0 Warning(s).
+Clean started: Project: 'lab2'
+   deleting intermediate output files for target 'Target 1'
 Build target 'Target 1'
 assembling startup_stm32f10x_hd.s...
 compiling stm32f10x_rcc.c...
 compiling stm32f10x_i2c.c...
 compiling stm32f10x_gpio.c...
 compiling main.c...
-main.c(50): warning:  #111-D: statement is unreachable
+main.c(76): warning:  #111-D: statement is unreachable
 compiling LSM303DLH.c...
 compiling iNEMO_led.c...
 compiling acc_lib.c...
+compiling FIRFilter.c...
 linking...
-Program Size: Code=14192 RO-data=488 RW-data=68 ZI-data=3236  
+Program Size: Code=15832 RO-data=488 RW-data=116 ZI-data=3308  
 "lab2.axf" - 0 Error(s), 1 Warning(s).
-Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'Target 1'
-compiling acc_lib.c...
-linking...
-Program Size: Code=14192 RO-data=488 RW-data=68 ZI-data=3236  
-"lab2.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'Target 1'
-compiling acc_lib.c...
-linking...
-Program Size: Code=14208 RO-data=488 RW-data=68 ZI-data=3236  
-"lab2.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'Target 1'
-compiling acc_lib.c...
-linking...
-Program Size: Code=14208 RO-data=488 RW-data=68 ZI-data=3236  
-"lab2.axf" - 0 Error(s), 0 Warning(s).
-Build target 'Target 1'
-linking...
-Program Size: Code=14208 RO-data=488 RW-data=68 ZI-data=3236  
-"lab2.axf" - 0 Error(s), 0 Warning(s).
-Build target 'Target 1'
-compiling acc_lib.c...
-linking...
-Program Size: Code=14208 RO-data=488 RW-data=68 ZI-data=3236  
-"lab2.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'Target 1'
-compiling acc_lib.c...
-linking...
-Program Size: Code=14216 RO-data=488 RW-data=68 ZI-data=3236  
-"lab2.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.

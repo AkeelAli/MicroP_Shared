@@ -9,14 +9,15 @@
 ### List of Objects: adding '"lsm303dlh.o"'
 ### List of Objects: adding '"inemo_led.o"'
 ### List of Objects: adding '"acc_lib.o"'
+### List of Objects: adding '"firfilter.o"'
 ### ADS-LD Command completed:
---cpu Cortex-M3 "startup_stm32f10x_hd.o" "stm32f10x_rcc.o" "stm32f10x_i2c.o" "stm32f10x_gpio.o" "main.o" "lsm303dlh.o" "inemo_led.o" "acc_lib.o" --ro-base 0x08000000 --entry 0x08000000 --rw-base 0x20000000 --entry Reset_Handler --first __Vectors --strict --autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--cpu Cortex-M3 "startup_stm32f10x_hd.o" "stm32f10x_rcc.o" "stm32f10x_i2c.o" "stm32f10x_gpio.o" "main.o" "lsm303dlh.o" "inemo_led.o" "acc_lib.o" "firfilter.o" --ro-base 0x08000000 --entry 0x08000000 --rw-base 0x20000000 --entry Reset_Handler --first __Vectors --strict --autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
 --info sizes --info totals --info unused --info veneers 
  --list ".\lab2.map" -o "lab2.axf"### Preparing Environment (PrepEnvAds)
 ### ADS-LD Output File: 'lab2.axf'
 ### ADS-LD Command File: 'lab2.lnp'
 ### Checking for dirty Components...
-### Creating CmdFile 'lab2.lnp', Handle=0x000003F4
+### Creating CmdFile 'lab2.lnp', Handle=0x000003A8
 ### Writing '.lnp' file
 ### ADS-LD Command file 'lab2.lnp' is ready.
 ### ADS-LD: About to start ADS-LD Thread.

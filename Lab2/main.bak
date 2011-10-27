@@ -46,8 +46,8 @@ void calculate_angles(){
     alpha_acc=arctan(acc_data[0]/sqrt( (acc_data[1]*acc_data[1]+acc_data[2]*acc_data[2]) *1.0 ));
 	beta_acc=arctan(acc_data[1]/sqrt(  (acc_data[0]*acc_data[0]+acc_data[2]*acc_data[2])  *1.0 ));
 
-	alpha_acc=alpha_acc-a_calib;
-	beta_acc=beta_acc-b_calib;
+	//alpha_acc=alpha_acc-a_calib;
+	//beta_acc=beta_acc-b_calib;
     #endif
 }
 
@@ -62,8 +62,8 @@ int main(void){
 	//calibration: place on straight surface at this point (roll=0, pitch=0)
 	update_data();
 	calculate_angles();
-	a_calib=alpha_acc;
-	b_calib=beta_acc;
+	a_calib=alpha;
+	b_calib=beta;
 
 
 	while(1){
