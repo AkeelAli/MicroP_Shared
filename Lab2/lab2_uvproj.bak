@@ -436,6 +436,11 @@
               <FileType>1</FileType>
               <FilePath>.\FIRFilter.c</FilePath>
             </File>
+            <File>
+              <FileName>FIRFilter.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\FIRFilter.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

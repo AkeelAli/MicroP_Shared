@@ -298,3 +298,21 @@ double arctan_if(double value){
 double arctan(double value){
  	return arctan_lut(value);
 }
+
+
+/**
+	New method calculating angle from Ax and Ay only
+*/
+
+double find_angle(s16 ax, s16 ay){
+	
+	/* 1st Quadrant */
+	if (ax >= 0 && ay >= 0)
+		return arctan(ax*1.0/ay);
+	/* 4th Quadrant */
+	if (ax < 0 && ay >= 0)
+		return arctan(ax*1.0/ay)+ 360;
+	/* 2nd and 3rd Quadrant */
+	else
+		return arctan(ax*1.0/ay)+ 180;
+}

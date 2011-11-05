@@ -14,13 +14,13 @@ s16 acc_data[3];
 float filt_data[3];
 
 double alpha, beta;
-#define DEBUG 1
-#if (DEBUG == 1)
-double alpha_acc, beta_acc;
-#endif
+int angle1, angle2;
+
 //double alpha_f, beta_f;
 static double a_calib=0;
 static double b_calib=0; //initialized to 0
+
+static int calibrated = 0;
 
 // Process raw data from peripherals
 void update_data() {
@@ -36,34 +36,44 @@ void filter_data() {
 }
 
 void calculate_angles(){
-	alpha=arctan(filt_data[0]/sqrt( (filt_data[1]*filt_data[1]+filt_data[2]*filt_data[2]) *1.0 ));
-	beta=arctan(filt_data[1]/sqrt(  (filt_data[0]*filt_data[0]+filt_data[2]*filt_data[2])  *1.0 ));
+	alpha = find_angle(filt_data[0], filt_data[2]);
+	beta = find_angle(filt_data[1], filt_data[2]);
 
-	alpha=alpha-a_calib;
-	beta=beta-b_calib;
+	if (calibrated){
+		alpha=360-(alpha-a_calib);
 
-    #if (DEBUG == 1)
-    alpha_acc=arctan(acc_data[0]/sqrt( (acc_data[1]*acc_data[1]+acc_data[2]*acc_data[2]) *1.0 ));
-	beta_acc=arctan(acc_data[1]/sqrt(  (acc_data[0]*acc_data[0]+acc_data[2]*acc_data[2])  *1.0 ));
+		beta=360-(beta-b_calib);
+		
+		
+		if (alpha > 360)
+			alpha-=360;
+		if (beta > 360)
+			beta-=360;
 
-	alpha_acc=alpha_acc-a_calib;
-	beta_acc=beta_acc-b_calib;
-    #endif
+		/* reverse direction of rotation */
+		alpha = 360 - alpha;
+		beta = 360 - beta;
+
+	}
+	else{
+		a_calib = alpha;
+		b_calib = beta;
+		calibrated = 1;
+	}
+
+	angle1 = (int) alpha;
+	angle2 = (int) beta;
 }
 
 int main(void){
-//	Led_TypeDef red_led;	
  
 	AM_Configuration();
-//	iNEMO_Led_Init(red_led);	
 
-//	iNEMO_Led_Toggle(red_led);
 
 	//calibration: place on straight surface at this point (roll=0, pitch=0)
 	update_data();
+	filter_data();
 	calculate_angles();
-	a_calib=alpha_acc;
-	b_calib=beta_acc;
 
 
 	while(1){

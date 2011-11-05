@@ -152,23 +152,6 @@
           <Name>-UM0074BUE -O14 -S0 -C0 -N00("ARM CoreSight JTAG-DP") -D00(3BA00477) -L00(4) -N01("Unknown JTAG device") -D01(06414041) -L01(5) -TO18 -TC10000000 -TP21 -TDS8007 -TDT0 -TDC1F -TIE1 -TIP8 -FO7 -FD20000000 -FC800 -FN1 -FF0STM32F10x_512 -FS08000000 -FL080000</Name>
         </SetRegEntry>
       </TargetDriverDllRegistry>
-      <Breakpoint>
-        <Bp>
-          <Number>0</Number>
-          <Type>0</Type>
-          <LineNumber>62</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>134221778</Address>
-          <ByteObject>0</ByteObject>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename></Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\lab2\main.c\62</Expression>
-        </Bp>
-      </Breakpoint>
       <WatchWindow1>
         <Ww>
           <count>0</count>
@@ -280,7 +263,7 @@
         <aLa>0</aLa>
         <aPa1>0</aPa1>
         <AscS4>0</AscS4>
-        <aSer4>0</aSer4>
+        <aSer4>1</aSer4>
         <StkLoc>0</StkLoc>
         <TrcWin>0</TrcWin>
         <newCpu>0</newCpu>
@@ -337,10 +320,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>36</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>1007</TopLine>
-      <CurrentLine>1011</CurrentLine>
+      <TopLine>1083</TopLine>
+      <CurrentLine>1094</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\stm32f10x_i2c.c</PathWithFileName>
       <FilenameWithoutPath>stm32f10x_i2c.c</FilenameWithoutPath>
@@ -365,10 +348,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>1</ColumnNumber>
+      <ColumnNumber>11</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>27</TopLine>
-      <CurrentLine>42</CurrentLine>
+      <TopLine>43</TopLine>
+      <CurrentLine>60</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\main.c</PathWithFileName>
       <FilenameWithoutPath>main.c</FilenameWithoutPath>
@@ -381,8 +364,8 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>134</TopLine>
-      <CurrentLine>139</CurrentLine>
+      <TopLine>119</TopLine>
+      <CurrentLine>127</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\LSM303DLH.c</PathWithFileName>
       <FilenameWithoutPath>LSM303DLH.c</FilenameWithoutPath>
@@ -407,10 +390,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>33</ColumnNumber>
+      <ColumnNumber>5</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>285</TopLine>
-      <CurrentLine>285</CurrentLine>
+      <TopLine>9</TopLine>
+      <CurrentLine>9</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\acc_lib.c</PathWithFileName>
       <FilenameWithoutPath>acc_lib.c</FilenameWithoutPath>
@@ -423,7 +406,7 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>13</TopLine>
+      <TopLine>3</TopLine>
       <CurrentLine>16</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\FIRFilter.c</PathWithFileName>
@@ -522,44 +505,42 @@
     </File>
   </Group>
 
-  <AlienFiles>
-    <PathWithFilename>C:\Users\MJ007\Dropbox\ECSE 426\agilowen-MicroP_Shared-ea8f63aed3aae24767c15fce21afa6fa3d8eaae2\Lab2\fdacoefs.h</PathWithFilename>
-    <TopLine>31</TopLine>
-    <CurrentLine>36</CurrentLine>
-    <Constant>0</Constant>
-    <WindowPosition>
-      <length>0</length>
-      <flags>0</flags>
-      <showCmd>0</showCmd>
-      <MinPosition>
-        <xPos>0</xPos>
-        <yPos>0</yPos>
-      </MinPosition>
-      <MaxPosition>
-        <xPos>0</xPos>
-        <yPos>0</yPos>
-      </MaxPosition>
-      <NormalPosition>
-        <Top>0</Top>
-        <Left>0</Left>
-        <Right>0</Right>
-        <Bottom>0</Bottom>
-      </NormalPosition>
-    </WindowPosition>
-  </AlienFiles>
-
   <MDIGroups>
     <Orientation>1</Orientation>
     <ActiveMDIGroup>0</ActiveMDIGroup>
     <MDIGroup>
       <Size>100</Size>
-      <ActiveTab>6</ActiveTab>
+      <ActiveTab>2</ActiveTab>
       <Documents>
         <Doc>
-          <Name>C:\Users\MJ007\Dropbox\ECSE 426\agilowen-MicroP_Shared-ea8f63aed3aae24767c15fce21afa6fa3d8eaae2\Lab2\fdacoefs.h</Name>
+          <Name>.\LSM303DLH.c</Name>
           <ColumnNumber>0</ColumnNumber>
-          <TopLine>31</TopLine>
-          <CurrentLine>36</CurrentLine>
+          <TopLine>119</TopLine>
+          <CurrentLine>127</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>acc_lib.h</Name>
+          <ColumnNumber>52</ColumnNumber>
+          <TopLine>1</TopLine>
+          <CurrentLine>3</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>.\acc_lib.c</Name>
+          <ColumnNumber>5</ColumnNumber>
+          <TopLine>9</TopLine>
+          <CurrentLine>9</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>.\main.c</Name>
+          <ColumnNumber>11</ColumnNumber>
+          <TopLine>43</TopLine>
+          <CurrentLine>60</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>LSM303DLH.h</Name>
+          <ColumnNumber>44</ColumnNumber>
+          <TopLine>631</TopLine>
+          <CurrentLine>631</CurrentLine>
         </Doc>
         <Doc>
           <Name>FIRFilter.h</Name>
@@ -570,56 +551,14 @@
         <Doc>
           <Name>.\FIRFilter.c</Name>
           <ColumnNumber>0</ColumnNumber>
-          <TopLine>13</TopLine>
+          <TopLine>3</TopLine>
           <CurrentLine>16</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>.\stm32f10x_i2c.c</Name>
-          <ColumnNumber>0</ColumnNumber>
-          <TopLine>450</TopLine>
-          <CurrentLine>454</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>.\LSM303DLH.c</Name>
-          <ColumnNumber>0</ColumnNumber>
-          <TopLine>134</TopLine>
-          <CurrentLine>139</CurrentLine>
         </Doc>
         <Doc>
           <Name>.\startup_stm32f10x_hd.s</Name>
           <ColumnNumber>0</ColumnNumber>
           <TopLine>153</TopLine>
           <CurrentLine>153</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>.\main.c</Name>
-          <ColumnNumber>23</ColumnNumber>
-          <TopLine>11</TopLine>
-          <CurrentLine>23</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>LSM303DLH.h</Name>
-          <ColumnNumber>44</ColumnNumber>
-          <TopLine>631</TopLine>
-          <CurrentLine>631</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>.\iNEMO_led.c</Name>
-          <ColumnNumber>18</ColumnNumber>
-          <TopLine>78</TopLine>
-          <CurrentLine>78</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>acc_lib.h</Name>
-          <ColumnNumber>28</ColumnNumber>
-          <TopLine>1</TopLine>
-          <CurrentLine>2</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>.\acc_lib.c</Name>
-          <ColumnNumber>33</ColumnNumber>
-          <TopLine>285</TopLine>
-          <CurrentLine>285</CurrentLine>
         </Doc>
       </Documents>
     </MDIGroup>
