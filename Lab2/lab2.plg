@@ -8,69 +8,21 @@ Project File Date:  10/27/2011
 
 <h2>Output:</h2>
 Build target 'Target 1'
-assembling startup_stm32f10x_hd.s...
-compiling stm32f10x_rcc.c...
-compiling stm32f10x_i2c.c...
-compiling stm32f10x_gpio.c...
 compiling main.c...
-main.c(79): warning:  #111-D: statement is unreachable
-compiling LSM303DLH.c...
-compiling iNEMO_led.c...
-compiling acc_lib.c...
-compiling FIRFilter.c...
+main.c(100): warning:  #111-D: statement is unreachable
+main.c(25): warning:  #177-D: variable "calibrated" was declared but never referenced
 linking...
-Program Size: Code=15912 RO-data=488 RW-data=116 ZI-data=3308  
-"lab2.axf" - 0 Error(s), 1 Warning(s).
-Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'Target 1'
-compiling main.c...
-main.c(79): warning:  #111-D: statement is unreachable
-compiling acc_lib.c...
-linking...
-Program Size: Code=15952 RO-data=488 RW-data=116 ZI-data=3308  
-"lab2.axf" - 0 Error(s), 1 Warning(s).
-Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'Target 1'
-compiling main.c...
-main.c(79): warning:  #111-D: statement is unreachable
-linking...
-Program Size: Code=15952 RO-data=488 RW-data=116 ZI-data=3308  
-"lab2.axf" - 0 Error(s), 1 Warning(s).
-Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'Target 1'
-compiling main.c...
-main.c(25): warning:  #260-D: explicit type is missing ("int" assumed)
-main.c(55): error:  #31: expression must have integral type
-main.c(56): error:  #31: expression must have integral type
-main.c(86): warning:  #111-D: statement is unreachable
-Target not created
-Build target 'Target 1'
-compiling main.c...
-main.c(25): warning:  #260-D: explicit type is missing ("int" assumed)
-main.c(86): warning:  #111-D: statement is unreachable
-linking...
-Program Size: Code=15992 RO-data=488 RW-data=124 ZI-data=3308  
+Program Size: Code=15816 RO-data=488 RW-data=116 ZI-data=3308  
 "lab2.axf" - 0 Error(s), 2 Warning(s).
+Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
 Build target 'Target 1'
 compiling main.c...
-main.c(86): warning:  #111-D: statement is unreachable
+main.c(108): warning:  #111-D: statement is unreachable
 linking...
-Program Size: Code=15992 RO-data=488 RW-data=124 ZI-data=3308  
-"lab2.axf" - 0 Error(s), 1 Warning(s).
-Build target 'Target 1'
-compiling main.c...
-main.c(90): warning:  #111-D: statement is unreachable
-linking...
-Program Size: Code=16168 RO-data=488 RW-data=124 ZI-data=3308  
+Program Size: Code=15888 RO-data=488 RW-data=116 ZI-data=3308  
 "lab2.axf" - 0 Error(s), 1 Warning(s).
 Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
 Erase Done.
@@ -78,116 +30,23 @@ Programming Done.
 Verify OK.
 Build target 'Target 1'
 compiling main.c...
-main.c(90): warning:  #111-D: statement is unreachable
-linking...
-Program Size: Code=16168 RO-data=488 RW-data=124 ZI-data=3308  
-"lab2.axf" - 0 Error(s), 1 Warning(s).
-Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'Target 1'
-compiling main.c...
-main.c(77): warning:  #111-D: statement is unreachable
-linking...
-Program Size: Code=15400 RO-data=488 RW-data=108 ZI-data=3308  
-"lab2.axf" - 0 Error(s), 1 Warning(s).
-Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'Target 1'
-compiling acc_lib.c...
-acc_lib.c(311): warning:  #223-D: function "artan" declared implicitly
-linking...
-lab2.axf: Error: L6218E: Undefined symbol artan (referred from acc_lib.o).
-Target not created
-Build target 'Target 1'
-compiling acc_lib.c...
-linking...
-Program Size: Code=15400 RO-data=488 RW-data=108 ZI-data=3308  
-"lab2.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'Target 1'
-compiling acc_lib.c...
-linking...
-Program Size: Code=15360 RO-data=488 RW-data=108 ZI-data=3308  
-"lab2.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'Target 1'
-compiling main.c...
-main.c(84): warning:  #111-D: statement is unreachable
-linking...
-Program Size: Code=15416 RO-data=488 RW-data=108 ZI-data=3308  
-"lab2.axf" - 0 Error(s), 1 Warning(s).
-Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'Target 1'
-compiling main.c...
-main.c(79): warning:  #111-D: statement is unreachable
-linking...
-Program Size: Code=15360 RO-data=488 RW-data=108 ZI-data=3308  
-"lab2.axf" - 0 Error(s), 1 Warning(s).
-Build target 'Target 1'
-compiling main.c...
-main.c(83): warning:  #111-D: statement is unreachable
+main.c(110): warning:  #111-D: statement is unreachable
 linking...
 Program Size: Code=15392 RO-data=488 RW-data=116 ZI-data=3308  
 "lab2.axf" - 0 Error(s), 1 Warning(s).
-Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'Target 1'
-assembling startup_stm32f10x_hd.s...
-compiling stm32f10x_rcc.c...
-compiling stm32f10x_i2c.c...
-compiling stm32f10x_gpio.c...
-compiling main.c...
-main.c(83): warning:  #111-D: statement is unreachable
-compiling LSM303DLH.c...
-compiling iNEMO_led.c...
-compiling acc_lib.c...
-compiling FIRFilter.c...
-linking...
-Program Size: Code=15392 RO-data=488 RW-data=116 ZI-data=3308  
-"lab2.axf" - 0 Error(s), 1 Warning(s).
-Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
 Build target 'Target 1'
 compiling main.c...
-main.c(79): warning:  #111-D: statement is unreachable
+main.c(101): warning:  #111-D: statement is unreachable
 compiling acc_lib.c...
-acc_lib.c(319): warning:  #174-D: expression has no effect
-acc_lib.c(321): warning:  #940-D: missing return statement at end of non-void function "find_angle"
-linking...
-Program Size: Code=15192 RO-data=488 RW-data=116 ZI-data=3308  
-"lab2.axf" - 0 Error(s), 3 Warning(s).
-Build target 'Target 1'
-compiling main.c...
-main.c(78): warning:  #111-D: statement is unreachable
-compiling acc_lib.c...
+acc_lib.c(318): warning:  #1293-D: assignment in condition
+acc_lib.c(320): warning:  #1293-D: assignment in condition
 acc_lib.c(322): warning:  #940-D: missing return statement at end of non-void function "find_angle"
 linking...
-Program Size: Code=15248 RO-data=488 RW-data=116 ZI-data=3308  
-"lab2.axf" - 0 Error(s), 2 Warning(s).
+Program Size: Code=15216 RO-data=488 RW-data=116 ZI-data=3308  
+"lab2.axf" - 0 Error(s), 4 Warning(s).
 Build target 'Target 1'
-compiling main.c...
-main.c(78): warning:  #111-D: statement is unreachable
+compiling acc_lib.c...
+acc_lib.c(322): warning:  #940-D: missing return statement at end of non-void function "find_angle"
 linking...
 Program Size: Code=15224 RO-data=488 RW-data=116 ZI-data=3308  
 "lab2.axf" - 0 Error(s), 1 Warning(s).
@@ -195,21 +54,10 @@ Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF
 Erase Done.
 Programming Done.
 Verify OK.
-Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
 Build target 'Target 1'
-assembling startup_stm32f10x_hd.s...
-compiling stm32f10x_rcc.c...
-compiling stm32f10x_i2c.c...
-compiling stm32f10x_gpio.c...
 compiling main.c...
-main.c(86): warning:  #111-D: statement is unreachable
-compiling LSM303DLH.c...
-compiling iNEMO_led.c...
+main.c(108): warning:  #111-D: statement is unreachable
 compiling acc_lib.c...
-compiling FIRFilter.c...
 linking...
 Program Size: Code=15392 RO-data=488 RW-data=116 ZI-data=3308  
 "lab2.axf" - 0 Error(s), 1 Warning(s).
