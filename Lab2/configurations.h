@@ -1,1 +1,1 @@
-void I_Configuration(void);
+void TIM_Configuration(void);

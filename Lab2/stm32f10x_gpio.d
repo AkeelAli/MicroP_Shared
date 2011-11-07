@@ -11,4 +11,4 @@ stm32f10x_gpio.o: C:\Program Files (x86)\STMicroelectronics\iNEMO Suite\Firmware
 stm32f10x_gpio.o: C:\Program Files (x86)\STMicroelectronics\iNEMO Suite\Firmware\Common\STM32F10xFWLib\v3_3_0\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_i2c.h
 stm32f10x_gpio.o: C:\Program Files (x86)\STMicroelectronics\iNEMO Suite\Firmware\Common\STM32F10xFWLib\v3_3_0\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\stm32f10x.h
 stm32f10x_gpio.o: C:\Program Files (x86)\STMicroelectronics\iNEMO Suite\Firmware\Common\STM32F10xFWLib\v3_3_0\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h
-stm32f10x_gpio.o: C:\Program Files (x86)\STMicroelectronics\iNEMO Suite\Firmware\Common\STM32F10xFWLib\v3_3_0\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h
+stm32f10x_gpio.o: ..\Lab2\misc.h

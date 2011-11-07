@@ -7,8 +7,7 @@
 
 #include "LSM303DLH.h"
 
-/* interrupt components configuration */
-void I_Configuration(){
+void TIM_Configuration(){
  	 /* configure TIMER */	
 	TIM_TimeBaseInitTypeDef timer_init;
 	NVIC_InitTypeDef nvic_init;

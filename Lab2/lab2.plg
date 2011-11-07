@@ -4,7 +4,7 @@
 <h1>µVision Build Log</h1>
 <h2>Project:</h2>
 C:\Users\Akeel\McGill\Fall 2011\microP\MicroP_Shared\Lab2\lab2.uvproj
-Project File Date:  10/27/2011
+Project File Date:  11/05/2011
 
 <h2>Output:</h2>
 Build target 'Target 1'
@@ -13,48 +13,19 @@ compiling stm32f10x_rcc.c...
 compiling stm32f10x_i2c.c...
 compiling stm32f10x_gpio.c...
 compiling main.c...
-main.c(95): warning:  #111-D: statement is unreachable
+configurations.h(1): warning:  #1-D: last line of file ends without a newline
+main.c(97): warning:  #111-D: statement is unreachable
 compiling LSM303DLH.c...
 compiling iNEMO_led.c...
 compiling acc_lib.c...
 compiling FIRFilter.c...
+compiling configurations.c...
+configurations.h(1): warning:  #1-D: last line of file ends without a newline
+compiling misc.c...
+compiling stm32f10x_tim.c...
 linking...
-Program Size: Code=16160 RO-data=488 RW-data=124 ZI-data=3308  
-"lab2.axf" - 0 Error(s), 1 Warning(s).
-Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'Target 1'
-compiling main.c...
-main.c(95): warning:  #111-D: statement is unreachable
-linking...
-Program Size: Code=16104 RO-data=488 RW-data=124 ZI-data=3308  
-"lab2.axf" - 0 Error(s), 1 Warning(s).
-Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'Target 1'
-compiling main.c...
-main.c(95): warning:  #111-D: statement is unreachable
-linking...
-Program Size: Code=16144 RO-data=488 RW-data=124 ZI-data=3308  
-"lab2.axf" - 0 Error(s), 1 Warning(s).
-Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'Target 1'
-compiling main.c...
-main.c(90): warning:  #111-D: statement is unreachable
-linking...
-Program Size: Code=16096 RO-data=488 RW-data=132 ZI-data=3308  
-"lab2.axf" - 0 Error(s), 1 Warning(s).
-Build target 'Target 1'
-linking...
-Program Size: Code=16096 RO-data=488 RW-data=132 ZI-data=3308  
-"lab2.axf" - 0 Error(s), 0 Warning(s).
+Program Size: Code=20232 RO-data=488 RW-data=124 ZI-data=3308  
+"lab2.axf" - 0 Error(s), 3 Warning(s).
 Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
 Internal DLL Error
 Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
@@ -63,259 +34,176 @@ Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF
 Erase Done.
 Programming Done.
 Verify OK.
-Build target 'Target 1'
-compiling main.c...
-main.c(72): error:  #20: identifier "TIM_TimeBaseInitTypeDef" is undefined
-main.c(76): error:  #20: identifier "TIM_CounterMode_Up" is undefined
-main.c(78): error:  #20: identifier "TIM_CKD_DIV1" is undefined
-main.c(80): warning:  #223-D: function "TIM_DeInit" declared implicitly
-main.c(81): warning:  #223-D: function "TIM_TimeBaseInit" declared implicitly
-main.c(82): warning:  #223-D: function "TIM_ITConfig" declared implicitly
-main.c(82): error:  #20: identifier "TIM_IT_Update" is undefined
-main.c(85): error:  #20: identifier "TIM1_UP_IRQHandler" is undefined
-main.c(92): warning:  #223-D: function "TIM_Cmd" declared implicitly
-main.c(94): warning:  #223-D: function "TIM_ClearFlag" declared implicitly
-main.c(94): error:  #20: identifier "TIM_FLAG_Update" is undefined
-main.c(122): warning:  #111-D: statement is unreachable
-main.c(130): warning:  #223-D: function "TIM_ClearITPendingBit" declared implicitly
-main.c(130): error:  #20: identifier "TIM_IT_Update" is undefined
-Target not created
 Build target 'Target 1'
 compiling main.c...
 configurations.h(1): warning:  #1-D: last line of file ends without a newline
-configurations.h(1): warning:  #1295-D: Deprecated declaration I_Configuration - give arg types
-main.c(96): warning:  #111-D: statement is unreachable
-main.c(104): warning:  #223-D: function "TIM_ClearITPendingBit" declared implicitly
-main.c(104): error:  #20: identifier "TIM_IT_Update" is undefined
-compiling configurations.c...
-configurations.c(1): error:  #5: cannot open source input file "lab_config.h": No such file or directory
-Target not created
-Build target 'Target 1'
-compiling main.c...
-configurations.h(1): warning:  #1295-D: Deprecated declaration I_Configuration - give arg types
-configurations.h(2): warning:  #1-D: last line of file ends without a newline
-main.c(96): warning:  #111-D: statement is unreachable
-compiling configurations.c...
-configurations.c(1): error:  #5: cannot open source input file "lab_config.h": No such file or directory
-Target not created
-Build target 'Target 1'
-compiling configurations.c...
-configurations.h(1): warning:  #1295-D: Deprecated declaration I_Configuration - give arg types
-configurations.h(2): warning:  #1-D: last line of file ends without a newline
-configurations.c(3): error:  #5: cannot open source input file "spi_protocol.h": No such file or directory
-Target not created
-Build target 'Target 1'
-compiling configurations.c...
-configurations.h(1): warning:  #1295-D: Deprecated declaration I_Configuration - give arg types
-configurations.h(2): warning:  #1-D: last line of file ends without a newline
-configurations.c(4): error:  #5: cannot open source input file "LPS001DL_I2C.h": No such file or directory
-Target not created
-Build target 'Target 1'
-compiling configurations.c...
-configurations.h(1): warning:  #1295-D: Deprecated declaration I_Configuration - give arg types
-configurations.h(2): warning:  #1-D: last line of file ends without a newline
-configurations.c(9): error:  #20: identifier "TIM_TimeBaseInitTypeDef" is undefined
-configurations.c(13): error:  #20: identifier "TIM_CounterMode_Up" is undefined
-configurations.c(15): error:  #20: identifier "TIM_CKD_DIV1" is undefined
-configurations.c(17): warning:  #223-D: function "TIM_DeInit" declared implicitly
-configurations.c(18): warning:  #223-D: function "TIM_TimeBaseInit" declared implicitly
-configurations.c(19): warning:  #223-D: function "TIM_ITConfig" declared implicitly
-configurations.c(19): error:  #20: identifier "TIM_IT_Update" is undefined
-configurations.c(22): error:  #513: a value of type "void (*)(void)" cannot be assigned to an entity of type "uint8_t"
-configurations.c(29): warning:  #223-D: function "TIM_Cmd" declared implicitly
-configurations.c(31): warning:  #223-D: function "TIM_ClearFlag" declared implicitly
-configurations.c(31): error:  #20: identifier "TIM_FLAG_Update" is undefined
-configurations.c(39): warning:  #223-D: function "TIM_ClearITPendingBit" declared implicitly
-configurations.c(39): error:  #20: identifier "TIM_IT_Update" is undefined
-configurations.c(40): warning:  #1-D: last line of file ends without a newline
-Target not created
-Build target 'Target 1'
-compiling configurations.c...
-configurations.h(1): warning:  #1295-D: Deprecated declaration I_Configuration - give arg types
-configurations.h(2): warning:  #1-D: last line of file ends without a newline
-configurations.c(23): error:  #513: a value of type "void (*)(void)" cannot be assigned to an entity of type "uint8_t"
-configurations.c(41): warning:  #1-D: last line of file ends without a newline
-Target not created
-Build target 'Target 1'
-compiling configurations.c...
-configurations.h(1): warning:  #1295-D: Deprecated declaration I_Configuration - give arg types
-configurations.h(2): warning:  #1-D: last line of file ends without a newline
-configurations.c(23): error:  #20: identifier "TIM1_IRQn" is undefined
-configurations.c(41): warning:  #1-D: last line of file ends without a newline
-Target not created
-Build target 'Target 1'
-compiling configurations.c...
-configurations.h(1): warning:  #1295-D: Deprecated declaration I_Configuration - give arg types
-configurations.h(2): warning:  #1-D: last line of file ends without a newline
-configurations.c(41): warning:  #1-D: last line of file ends without a newline
+main.c(95): warning:  #111-D: statement is unreachable
 linking...
-lab2.axf: Error: L6218E: Undefined symbol NVIC_Init (referred from configurations.o).
-lab2.axf: Error: L6218E: Undefined symbol TIM_ClearFlag (referred from configurations.o).
-lab2.axf: Error: L6218E: Undefined symbol TIM_ClearITPendingBit (referred from configurations.o).
-lab2.axf: Error: L6218E: Undefined symbol TIM_Cmd (referred from configurations.o).
-lab2.axf: Error: L6218E: Undefined symbol TIM_DeInit (referred from configurations.o).
-lab2.axf: Error: L6218E: Undefined symbol TIM_ITConfig (referred from configurations.o).
-lab2.axf: Error: L6218E: Undefined symbol TIM_TimeBaseInit (referred from configurations.o).
-Target not created
-Build target 'Target 1'
-compiling configurations.c...
-configurations.h(1): warning:  #1295-D: Deprecated declaration I_Configuration - give arg types
-configurations.h(2): warning:  #1-D: last line of file ends without a newline
-configurations.c(42): warning:  #1-D: last line of file ends without a newline
-linking...
-lab2.axf: Error: L6218E: Undefined symbol NVIC_Init (referred from configurations.o).
-lab2.axf: Error: L6218E: Undefined symbol TIM_ClearFlag (referred from configurations.o).
-lab2.axf: Error: L6218E: Undefined symbol TIM_ClearITPendingBit (referred from configurations.o).
-lab2.axf: Error: L6218E: Undefined symbol TIM_Cmd (referred from configurations.o).
-lab2.axf: Error: L6218E: Undefined symbol TIM_DeInit (referred from configurations.o).
-lab2.axf: Error: L6218E: Undefined symbol TIM_ITConfig (referred from configurations.o).
-lab2.axf: Error: L6218E: Undefined symbol TIM_TimeBaseInit (referred from configurations.o).
-Target not created
-Build target 'Target 1'
-compiling configurations.c...
-configurations.h(1): warning:  #1295-D: Deprecated declaration I_Configuration - give arg types
-configurations.h(2): warning:  #1-D: last line of file ends without a newline
-configurations.c(43): warning:  #1-D: last line of file ends without a newline
-linking...
-lab2.axf: Error: L6218E: Undefined symbol NVIC_Init (referred from configurations.o).
-lab2.axf: Error: L6218E: Undefined symbol TIM_ClearFlag (referred from configurations.o).
-lab2.axf: Error: L6218E: Undefined symbol TIM_ClearITPendingBit (referred from configurations.o).
-lab2.axf: Error: L6218E: Undefined symbol TIM_Cmd (referred from configurations.o).
-lab2.axf: Error: L6218E: Undefined symbol TIM_DeInit (referred from configurations.o).
-lab2.axf: Error: L6218E: Undefined symbol TIM_ITConfig (referred from configurations.o).
-lab2.axf: Error: L6218E: Undefined symbol TIM_TimeBaseInit (referred from configurations.o).
-Target not created
+Program Size: Code=20232 RO-data=488 RW-data=124 ZI-data=3308  
+"lab2.axf" - 0 Error(s), 2 Warning(s).
+Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
 Build target 'Target 1'
 assembling startup_stm32f10x_hd.s...
 compiling stm32f10x_rcc.c...
 compiling stm32f10x_i2c.c...
 compiling stm32f10x_gpio.c...
 compiling main.c...
-configurations.h(1): warning:  #1295-D: Deprecated declaration I_Configuration - give arg types
-configurations.h(2): warning:  #1-D: last line of file ends without a newline
-main.c(96): warning:  #111-D: statement is unreachable
+configurations.h(1): warning:  #1-D: last line of file ends without a newline
+main.c(110): warning:  #111-D: statement is unreachable
 compiling LSM303DLH.c...
 compiling iNEMO_led.c...
 compiling acc_lib.c...
+acc_lib.c(30): error:  #20: identifier "magn_conf" is undefined
 compiling FIRFilter.c...
 compiling configurations.c...
-configurations.h(1): warning:  #1295-D: Deprecated declaration I_Configuration - give arg types
-configurations.h(2): warning:  #1-D: last line of file ends without a newline
-configurations.c(43): warning:  #1-D: last line of file ends without a newline
-linking...
-lab2.axf: Error: L6218E: Undefined symbol NVIC_Init (referred from configurations.o).
-lab2.axf: Error: L6218E: Undefined symbol TIM_ClearFlag (referred from configurations.o).
-lab2.axf: Error: L6218E: Undefined symbol TIM_ClearITPendingBit (referred from configurations.o).
-lab2.axf: Error: L6218E: Undefined symbol TIM_Cmd (referred from configurations.o).
-lab2.axf: Error: L6218E: Undefined symbol TIM_DeInit (referred from configurations.o).
-lab2.axf: Error: L6218E: Undefined symbol TIM_ITConfig (referred from configurations.o).
-lab2.axf: Error: L6218E: Undefined symbol TIM_TimeBaseInit (referred from configurations.o).
-Target not created
-Build target 'Target 1'
+configurations.h(1): warning:  #1-D: last line of file ends without a newline
 compiling misc.c...
-linking...
-lab2.axf: Error: L6218E: Undefined symbol TIM_ClearFlag (referred from configurations.o).
-lab2.axf: Error: L6218E: Undefined symbol TIM_ClearITPendingBit (referred from configurations.o).
-lab2.axf: Error: L6218E: Undefined symbol TIM_Cmd (referred from configurations.o).
-lab2.axf: Error: L6218E: Undefined symbol TIM_DeInit (referred from configurations.o).
-lab2.axf: Error: L6218E: Undefined symbol TIM_ITConfig (referred from configurations.o).
-lab2.axf: Error: L6218E: Undefined symbol TIM_TimeBaseInit (referred from configurations.o).
-Target not created
-Build target 'Target 1'
-compiling configurations.c...
-configurations.h(1): warning:  #1295-D: Deprecated declaration I_Configuration - give arg types
-configurations.h(2): warning:  #1-D: last line of file ends without a newline
-configurations.c(43): warning:  #1-D: last line of file ends without a newline
 compiling stm32f10x_tim.c...
-linking...
-Program Size: Code=20232 RO-data=488 RW-data=128 ZI-data=3312  
-"lab2.axf" - 0 Error(s), 3 Warning(s).
-Build target 'Target 1'
-compiling configurations.c...
-configurations.h(1): warning:  #1295-D: Deprecated declaration I_Configuration - give arg types
-configurations.h(2): warning:  #1-D: last line of file ends without a newline
-configurations.c(25): error:  #513: a value of type "void (*)(void)" cannot be assigned to an entity of type "uint8_t"
-configurations.c(43): warning:  #1-D: last line of file ends without a newline
 Target not created
 Build target 'Target 1'
-compiling configurations.c...
-configurations.h(1): warning:  #1295-D: Deprecated declaration I_Configuration - give arg types
-configurations.h(2): warning:  #1-D: last line of file ends without a newline
-configurations.c(25): error:  #20: identifier "TIM1_IRQn" is undefined
-configurations.c(43): warning:  #1-D: last line of file ends without a newline
-Target not created
-Build target 'Target 1'
-compiling configurations.c...
-configurations.h(1): warning:  #1295-D: Deprecated declaration I_Configuration - give arg types
-configurations.h(2): warning:  #1-D: last line of file ends without a newline
-configurations.c(43): warning:  #1-D: last line of file ends without a newline
+compiling acc_lib.c...
 linking...
-Program Size: Code=20240 RO-data=488 RW-data=128 ZI-data=3312  
-"lab2.axf" - 0 Error(s), 3 Warning(s).
-Build target 'Target 1'
-compiling configurations.c...
-configurations.h(1): warning:  #1295-D: Deprecated declaration I_Configuration - give arg types
-configurations.h(2): warning:  #1-D: last line of file ends without a newline
-configurations.c(43): warning:  #1-D: last line of file ends without a newline
-linking...
-Program Size: Code=20248 RO-data=488 RW-data=128 ZI-data=3312  
-"lab2.axf" - 0 Error(s), 3 Warning(s).
+Program Size: Code=22400 RO-data=776 RW-data=132 ZI-data=3308  
+"lab2.axf" - 0 Error(s), 0 Warning(s).
+Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
 Build target 'Target 1'
 compiling main.c...
-configurations.h(2): warning:  #1-D: last line of file ends without a newline
-main.c(96): warning:  #111-D: statement is unreachable
-compiling configurations.c...
-configurations.h(2): warning:  #1-D: last line of file ends without a newline
-configurations.c(43): warning:  #1-D: last line of file ends without a newline
+configurations.h(1): warning:  #1-D: last line of file ends without a newline
+main.c(85): warning:  #1293-D: assignment in condition
+main.c(87): warning:  #1293-D: assignment in condition
+main.c(118): warning:  #111-D: statement is unreachable
 linking...
-Program Size: Code=20248 RO-data=488 RW-data=128 ZI-data=3312  
+Program Size: Code=22456 RO-data=776 RW-data=132 ZI-data=3308  
+"lab2.axf" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+configurations.h(1): warning:  #1-D: last line of file ends without a newline
+main.c(30): error:  #65: expected a ";"
+main.c(80): error:  #20: identifier "heading" is undefined
+main.c(86): warning:  #1293-D: assignment in condition
+main.c(88): warning:  #1293-D: assignment in condition
+main.c(119): warning:  #111-D: statement is unreachable
+Target not created
+Build target 'Target 1'
+compiling main.c...
+configurations.h(1): warning:  #1-D: last line of file ends without a newline
+main.c(86): warning:  #1293-D: assignment in condition
+main.c(88): warning:  #1293-D: assignment in condition
+main.c(119): warning:  #111-D: statement is unreachable
+linking...
+Program Size: Code=22576 RO-data=776 RW-data=132 ZI-data=3308  
 "lab2.axf" - 0 Error(s), 4 Warning(s).
 Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
 Erase Done.
 Programming Done.
 Verify OK.
 Build target 'Target 1'
-compiling configurations.c...
-configurations.h(2): warning:  #1-D: last line of file ends without a newline
-configurations.c(15): error:  #268: declaration may not appear after executable statement in block
-configurations.c(16): error:  #268: declaration may not appear after executable statement in block
-configurations.c(46): warning:  #1-D: last line of file ends without a newline
+compiling main.c...
+configurations.h(1): warning:  #1-D: last line of file ends without a newline
+main.c(86): warning:  #1293-D: assignment in condition
+main.c(88): warning:  #1293-D: assignment in condition
+main.c(126): warning:  #111-D: statement is unreachable
+linking...
+Program Size: Code=22752 RO-data=784 RW-data=136 ZI-data=3312  
+"lab2.axf" - 0 Error(s), 4 Warning(s).
+Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling main.c...
+configurations.h(1): warning:  #1-D: last line of file ends without a newline
+main.c(86): warning:  #1293-D: assignment in condition
+main.c(88): warning:  #1293-D: assignment in condition
+main.c(126): warning:  #111-D: statement is unreachable
+linking...
+Program Size: Code=22748 RO-data=788 RW-data=136 ZI-data=3312  
+"lab2.axf" - 0 Error(s), 4 Warning(s).
+Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling main.c...
+configurations.h(1): warning:  #1-D: last line of file ends without a newline
+main.c(86): warning:  #1293-D: assignment in condition
+main.c(88): warning:  #1293-D: assignment in condition
+main.c(99): warning:  #223-D: function "iNEMO_Toggle" declared implicitly
+main.c(126): warning:  #111-D: statement is unreachable
+linking...
+lab2.axf: Error: L6218E: Undefined symbol iNEMO_Toggle (referred from main.o).
 Target not created
 Build target 'Target 1'
+compiling main.c...
+configurations.h(1): warning:  #1-D: last line of file ends without a newline
+main.c(86): warning:  #1293-D: assignment in condition
+main.c(88): warning:  #1293-D: assignment in condition
+main.c(126): warning:  #111-D: statement is unreachable
+linking...
+Program Size: Code=22752 RO-data=784 RW-data=136 ZI-data=3312  
+"lab2.axf" - 0 Error(s), 4 Warning(s).
+Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling main.c...
+configurations.h(1): warning:  #1-D: last line of file ends without a newline
+main.c(88): warning:  #1293-D: assignment in condition
+main.c(90): warning:  #1293-D: assignment in condition
+main.c(125): warning:  #111-D: statement is unreachable
+linking...
+Program Size: Code=22760 RO-data=784 RW-data=140 ZI-data=3308  
+"lab2.axf" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+configurations.h(1): warning:  #1-D: last line of file ends without a newline
+main.c(88): warning:  #1293-D: assignment in condition
+main.c(90): warning:  #1293-D: assignment in condition
+main.c(127): warning:  #111-D: statement is unreachable
+linking...
+Program Size: Code=22760 RO-data=784 RW-data=140 ZI-data=3308  
+"lab2.axf" - 0 Error(s), 4 Warning(s).
+Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling main.c...
+configurations.h(2): warning:  #1-D: last line of file ends without a newline
+main.c(88): warning:  #1293-D: assignment in condition
+main.c(90): warning:  #1293-D: assignment in condition
+main.c(127): warning:  #111-D: statement is unreachable
 compiling configurations.c...
 configurations.h(2): warning:  #1-D: last line of file ends without a newline
-configurations.c(46): warning:  #1-D: last line of file ends without a newline
-linking...
-Program Size: Code=20256 RO-data=488 RW-data=128 ZI-data=3312  
-"lab2.axf" - 0 Error(s), 2 Warning(s).
-Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
+configurations.c(40): warning:  #223-D: function "iNEMO_Led_Init" declared implicitly
+configurations.c(40): error:  #20: identifier "red_led" is undefined
+Target not created
 Build target 'Target 1'
 compiling main.c...
 configurations.h(1): warning:  #1-D: last line of file ends without a newline
-main.c(94): warning:  #111-D: statement is unreachable
+main.c(88): warning:  #1293-D: assignment in condition
+main.c(90): warning:  #1293-D: assignment in condition
+main.c(127): warning:  #111-D: statement is unreachable
 compiling configurations.c...
 configurations.h(1): warning:  #1-D: last line of file ends without a newline
 linking...
-Program Size: Code=20232 RO-data=488 RW-data=124 ZI-data=3308  
-"lab2.axf" - 0 Error(s), 3 Warning(s).
-Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'Target 1'
-linking...
-Program Size: Code=20232 RO-data=488 RW-data=124 ZI-data=3308  
-"lab2.axf" - 0 Error(s), 0 Warning(s).
-Build target 'Target 1'
-compiling main.c...
-configurations.h(1): warning:  #1-D: last line of file ends without a newline
-main.c(94): warning:  #111-D: statement is unreachable
-linking...
-Program Size: Code=20232 RO-data=488 RW-data=124 ZI-data=3308  
-"lab2.axf" - 0 Error(s), 2 Warning(s).
+Program Size: Code=22760 RO-data=784 RW-data=140 ZI-data=3308  
+"lab2.axf" - 0 Error(s), 5 Warning(s).
 Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
 Erase Done.
 Programming Done.

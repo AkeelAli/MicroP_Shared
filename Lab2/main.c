@@ -11,6 +11,7 @@
 
 // Raw data arrays
 s16 acc_data[3];
+s16 magn_data[3];
 
 
 //Filtered data arrays:
@@ -26,10 +27,15 @@ static double a_calib=0;
 static double b_calib=0; //initialized to 0
 
 int pitch=0, roll=0;
+float heading=0;
+
+Led_TypeDef red_led;
 
 // Process raw data from peripherals
 void update_data() {
 	LSM303DLH_Acc_Read_Acc(acc_data);	// Read accelerometer data
+
+	LSM303DLH_Magn_Read_Magn(magn_data);
 }
 
 void filter_data() {
@@ -66,17 +72,46 @@ void calculate_angles(){
 	roll = (int) beta;
 }
 
+void calculate_heading(){
+
+	s16 y = magn_data[1]*cos(roll) - magn_data[2]*cos(pitch)*sin(roll) + magn_data[0]*sin(pitch)*sin(roll);
+	
+	s16 x = magn_data[0]*cos(pitch) + magn_data[2]*sin(pitch);
 
 
-int main(void){
-//	Led_TypeDef red_led;	
+	heading = arctan(y / x);
+	
+	if (x < 0)
+		heading += 180;
+	else if (x > 0 && y <= 0)
+		heading += 360;
+	else if (x = 0 && y < 0)
+		heading = 90;
+	else if (x = 0 && y > 0)
+		heading = 270;		
+}
+
+
+void light_led(){
  
+	if (roll > 50 || pitch > 50)
+		iNEMO_Led_On(red_led);
+	else
+		iNEMO_Led_Off(red_led);
+}
+
+
+
+int main(void){	
+ 
+	iNEMO_Led_Init(red_led);
+
 	AM_Configuration();
-//	iNEMO_Led_Init(red_led);	
 
-//	iNEMO_Led_Toggle(red_led);
+	//timer configuration for reading values from accelerometer
+	TIM_Configuration();
 
-	I_Configuration();
+	
 
 	//calibration: place on straight surface at this point (roll=0, pitch=0)
 	update_data();
@@ -86,9 +121,7 @@ int main(void){
 	b_calib=beta;
 
 
-	while(1){
-		//TODO improve efficiency by combining both into 1 call if needed
-		
+	while(1){		
 	}
 	
 	return 0;	
@@ -98,6 +131,8 @@ __irq void TIM2_IRQHandler(void) {
 	update_data();
     filter_data();
 	calculate_angles();
+	calculate_heading();
+	light_led();
 	
 	TIM_ClearITPendingBit(TIM2, TIM_IT_Update);                       	
 }

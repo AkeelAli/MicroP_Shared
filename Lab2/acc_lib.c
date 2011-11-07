@@ -10,6 +10,7 @@ void AM_Configuration() {
 
 	// Allocate config and init structs
    	LSM_Acc_ConfigTypeDef acc_conf;
+	LSM_Magn_ConfigTypeDef magn_conf;
 
 	LSM303DLH_I2C_Init();						   		// Init I2C bus
 
@@ -26,7 +27,13 @@ void AM_Configuration() {
 
 	LSM303DLH_Acc_Config(&acc_conf);				   	// Configure Accelerometer with all selected values above
 
+	// Initialize Magnetometer Settings
+	magn_conf.M_ODR = LSM_Magn_ODR_75;				    // Output Data Rate 75Hz
+	magn_conf.Meas_Conf = LSM_Magn_MEASCONF_NORMAL;    	// Normal bias Measurements
+	magn_conf.Gain = LSM_Magn_GAIN_1_3;			    	// 1.3 gauss scale
+	magn_conf.Mode = LSM_Magn_MODE_CONTINUOS;		   	// Continuous Update
 
+	LSM303DLH_Magn_Config(&magn_conf);					// Configure Magnetometer with all selected values above
 }
 
 /**
