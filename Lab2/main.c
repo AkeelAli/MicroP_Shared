@@ -10,7 +10,7 @@
 
 #include "configurations.h"
 
-#define FREE_FALL_THRESHOLD 0.8
+#define FREE_FALL_THRESHOLD 800
 #define COMPASS_MAX_ANGLE 50
 
 
@@ -38,7 +38,7 @@ enum MODE_T{
 	freefall
 };
 
-static enum MODE_T mode = freefall; 
+static enum MODE_T mode = compass; 
 int free_fall_value; //placed here just so we can watch it
 
 // Process raw data from peripherals
@@ -110,8 +110,8 @@ void check_maxAngle(){
 }
 
 void check_freefall(){
-	free_fall_value = sqrt( magn_data[0]*magn_data[0] 
-		+ magn_data[1]*magn_data[1] + magn_data[2]*magn_data[2] );
+	free_fall_value = sqrt( acc_data[0]*acc_data[0] 
+		+ acc_data[1]*acc_data[1] + acc_data[2]*acc_data[2] );
 	
 	if (  free_fall_value < FREE_FALL_THRESHOLD ) 
 		EXTI_GenerateSWInterrupt(EXTI_Line12);
@@ -129,7 +129,9 @@ int main(void){
 
 	TIM_Configuration();
 
-	SWInt_Configuration();	
+	SWInt_Configuration();
+	
+	ButtonInt_Configuration();	
 
 	//calibration: place on straight surface at this point (roll=0, pitch=0)
 	update_data();
@@ -160,21 +162,24 @@ __irq void TIM2_IRQHandler(void) {
 	TIM_ClearITPendingBit(TIM2, TIM_IT_Update);                       	
 }
 
-//SWInterrupt handler for freefall
+
 __irq void EXTI15_10_IRQHandler(void){
-	iNEMO_Led_On(red_led);
+	// button interrupt
+	if (EXTI_GetITStatus(EXTI_Line13) != RESET){
+ 		if (mode == freefall)	
+			mode = compass;
+		else
+			mode = freefall;
+			
+		EXTI_ClearITPendingBit(EXTI_Line13);
+	} 
+	//SWInterrupt handler for freefall
+	else if (EXTI_GetITStatus(EXTI_Line12) != RESET){
+		iNEMO_Led_On(red_led);
 
-	//clear the pending interrupt
-	EXTI_ClearITPendingBit(EXTI_Line12);
+		EXTI_ClearITPendingBit(EXTI_Line12);
+	}
+
 }
 
-//button interrupt
-__irq void EXTI9_5_IRQHandler(void){
-	if (mode == freefall)	
-		mode = compass;
-	else
-		mode = freefall;
-		
-	TIM_ClearITPendingBit(TIM2, TIM_IT_Update);		
-}
 

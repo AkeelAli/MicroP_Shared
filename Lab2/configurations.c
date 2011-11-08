@@ -89,27 +89,30 @@ void ButtonInt_Configuration(){
 	EXTI_InitTypeDef extiConfig;
 	NVIC_InitTypeDef nvicConfig;
 	
-	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIO_KEY_BUTTON |  RCC_APB2Periph_AFIO, ENABLE);
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC,ENABLE);
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO,ENABLE);
 	
-	gpioConfig.GPIO_Pin = GPIO_PIN_KEY_BUTTON;
+	gpioConfig.GPIO_Pin = GPIO_Pin_13;
 	gpioConfig.GPIO_Speed = GPIO_Speed_50MHz;
 	gpioConfig.GPIO_Mode = GPIO_Mode_IN_FLOATING;
-	GPIO_Init(GPIO_KEY_BUTTON , &gpioConfig);
+	GPIO_Init(GPIOC , &gpioConfig);
 	
 
-	GPIO_EXTILineConfig(GPIO_PORT_SOURCE_KEY_BUTTON, GPIO_PIN_SOURCE_KEY_BUTTON);
+	GPIO_EXTILineConfig(GPIO_PortSourceGPIOC,GPIO_PinSource13);
 	
 
-  	extiConfig.EXTI_Line = EXTI_LINE_KEY_BUTTON; 
+  	extiConfig.EXTI_Line = EXTI_Line13; 
   	extiConfig.EXTI_Mode = EXTI_Mode_Interrupt;
-  	extiConfig.EXTI_Trigger = EXTI_Trigger_Falling;
+  	extiConfig.EXTI_Trigger = EXTI_Trigger_Rising;
   	extiConfig.EXTI_LineCmd = ENABLE;
 	EXTI_Init(&extiConfig);
 	
 
-	nvicConfig.NVIC_IRQChannel = EXTI9_5_IRQn;		
+	nvicConfig.NVIC_IRQChannel = EXTI15_10_IRQn;		
   	nvicConfig.NVIC_IRQChannelPreemptionPriority = 1;	//highest priority
   	nvicConfig.NVIC_IRQChannelSubPriority = 0; 
   	nvicConfig.NVIC_IRQChannelCmd = ENABLE;
 	NVIC_Init(&nvicConfig);
+
+
 }

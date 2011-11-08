@@ -451,6 +451,11 @@
               <FileType>1</FileType>
               <FilePath>.\stm32f10x_tim.c</FilePath>
             </File>
+            <File>
+              <FileName>stm32f10x_exti.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\stm32f10x_exti.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -500,6 +505,16 @@
               <FileName>configurations.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\configurations.h</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f10x_exti.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\stm32f10x_exti.h</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f10x_gpio.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\stm32f10x_gpio.h</FilePath>
             </File>
           </Files>
         </Group>

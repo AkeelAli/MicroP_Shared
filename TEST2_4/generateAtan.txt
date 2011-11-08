@@ -1,0 +1,20 @@
+http://ideone.com/hjwjl
+
+#include <math.h>
+#include <stdio.h>
+ 
+#define PI 3.1415926536
+ 
+int main(void){
+double angle=1;
+double limit=0;
+ 
+for(angle=1;angle<91;angle++){
+printf("else if (value <= %5.3f)\n",tan(angle*PI/180.));
+printf("    ans=%3.1f;\n",angle);
+ 
+}
+ 
+return 0;
+ 
+}

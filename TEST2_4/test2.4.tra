@@ -1,0 +1,25 @@
+*** Creating Trace Output File 'test2.4.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '"stm32f10x.o"'
+### List of Objects: adding '"main.o"'
+### List of Objects: adding '"lsm303dlh.o"'
+### List of Objects: adding '"misc.o"'
+### List of Objects: adding '"stm32f10x_gpio.o"'
+### List of Objects: adding '"stm32f10x_i2c.o"'
+### List of Objects: adding '"stm32f10x_rcc.o"'
+### ADS-LD Command completed:
+--cpu Cortex-M3 "stm32f10x.o" "main.o" "lsm303dlh.o" "misc.o" "stm32f10x_gpio.o" "stm32f10x_i2c.o" "stm32f10x_rcc.o" --strict --scatter "test2.4.sct" 
+--autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\test2.map" -o "test2.4.axf"### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: 'test2.4.axf'
+### ADS-LD Command File: 'test2.4.lnp'
+### Checking for dirty Components...
+### Creating CmdFile 'test2.4.lnp', Handle=0x00000444
+### Writing '.lnp' file
+### ADS-LD Command file 'test2.4.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.

@@ -1,0 +1,4 @@
+--cpu Cortex-M3 "stm32f10x.o" "main.o" "lsm303dlh.o" "misc.o" "stm32f10x_gpio.o" "stm32f10x_i2c.o" "stm32f10x_rcc.o" --strict --scatter "test2.4.sct" 
+--autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\test2.map" -o "test2.4.axf"

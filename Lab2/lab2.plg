@@ -4,156 +4,22 @@
 <h1>µVision Build Log</h1>
 <h2>Project:</h2>
 C:\Users\Akeel\McGill\Fall 2011\microP\MicroP_Shared\Lab2\lab2.uvproj
-Project File Date:  11/05/2011
+Project File Date:  11/08/2011
 
 <h2>Output:</h2>
 Build target 'Target 1'
-linking...
-Program Size: Code=22760 RO-data=784 RW-data=140 ZI-data=3308  
-"lab2.axf" - 0 Error(s), 0 Warning(s).
-Build target 'Target 1'
 compiling main.c...
-configurations.h(1): warning:  #1-D: last line of file ends without a newline
-main.c(88): warning:  #1293-D: assignment in condition
-main.c(90): warning:  #1293-D: assignment in condition
-main.c(127): warning:  #111-D: statement is unreachable
-linking...
-Program Size: Code=22760 RO-data=784 RW-data=140 ZI-data=3308  
-"lab2.axf" - 0 Error(s), 4 Warning(s).
-Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'Target 1'
-compiling main.c...
-configurations.h(1): warning:  #1-D: last line of file ends without a newline
-main.c(88): warning:  #1293-D: assignment in condition
-main.c(90): warning:  #1293-D: assignment in condition
-main.c(97): warning:  #223-D: function "abs" declared implicitly
-main.c(127): warning:  #111-D: statement is unreachable
-linking...
-Program Size: Code=22780 RO-data=788 RW-data=140 ZI-data=3308  
-"lab2.axf" - 0 Error(s), 5 Warning(s).
-Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'Target 1'
-compiling main.c...
-configurations.h(1): warning:  #1-D: last line of file ends without a newline
-main.c(95): warning:  #1293-D: assignment in condition
-main.c(97): warning:  #1293-D: assignment in condition
-main.c(104): warning:  #223-D: function "abs" declared implicitly
-main.c(134): warning:  #111-D: statement is unreachable
-main.c(39): warning:  #177-D: variable "board_mode" was declared but never referenced
-linking...
-Program Size: Code=22780 RO-data=788 RW-data=148 ZI-data=3308  
-"lab2.axf" - 0 Error(s), 6 Warning(s).
-Build target 'Target 1'
-assembling startup_stm32f10x_hd.s...
-compiling stm32f10x_rcc.c...
-compiling stm32f10x_i2c.c...
-compiling stm32f10x_gpio.c...
-compiling main.c...
-configurations.h(1): warning:  #1-D: last line of file ends without a newline
-main.c(95): warning:  #1293-D: assignment in condition
-main.c(97): warning:  #1293-D: assignment in condition
-main.c(104): warning:  #223-D: function "abs" declared implicitly
-main.c(135): warning:  #111-D: statement is unreachable
-compiling LSM303DLH.c...
-compiling iNEMO_led.c...
-compiling acc_lib.c...
-compiling FIRFilter.c...
-compiling configurations.c...
-configurations.h(1): warning:  #1-D: last line of file ends without a newline
-compiling misc.c...
-compiling stm32f10x_tim.c...
-linking...
-Program Size: Code=22792 RO-data=784 RW-data=148 ZI-data=3308  
-"lab2.axf" - 0 Error(s), 6 Warning(s).
-Build target 'Target 1'
-compiling main.c...
-configurations.h(1): warning:  #1-D: last line of file ends without a newline
-main.c(95): warning:  #1293-D: assignment in condition
-main.c(97): warning:  #1293-D: assignment in condition
-main.c(104): warning:  #223-D: function "abs" declared implicitly
-main.c(144): warning:  #111-D: statement is unreachable
-linking...
-Program Size: Code=22924 RO-data=788 RW-data=148 ZI-data=3308  
-"lab2.axf" - 0 Error(s), 5 Warning(s).
-Build target 'Target 1'
-compiling main.c...
-configurations.h(1): warning:  #1-D: last line of file ends without a newline
-main.c(95): warning:  #1293-D: assignment in condition
-main.c(97): warning:  #1293-D: assignment in condition
-main.c(104): warning:  #223-D: function "abs" declared implicitly
-main.c(144): warning:  #111-D: statement is unreachable
-linking...
-Program Size: Code=22924 RO-data=788 RW-data=148 ZI-data=3308  
-"lab2.axf" - 0 Error(s), 5 Warning(s).
-Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'Target 1'
-compiling main.c...
-configurations.h(1): warning:  #1-D: last line of file ends without a newline
-main.c(96): warning:  #1293-D: assignment in condition
-main.c(98): warning:  #1293-D: assignment in condition
-main.c(105): warning:  #223-D: function "abs" declared implicitly
-main.c(145): warning:  #111-D: statement is unreachable
-linking...
-Program Size: Code=22928 RO-data=784 RW-data=152 ZI-data=3312  
-"lab2.axf" - 0 Error(s), 5 Warning(s).
-Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'Target 1'
-compiling main.c...
-configurations.h(2): warning:  #1-D: last line of file ends without a newline
-main.c(97): warning:  #1293-D: assignment in condition
-main.c(99): warning:  #1293-D: assignment in condition
-main.c(105): warning:  #223-D: function "abs" declared implicitly
-main.c(116): warning:  #223-D: function "EXTI_GenerateSWInterrupt" declared implicitly
-main.c(116): error:  #20: identifier "EXTI_Line12" is undefined
-main.c(144): warning:  #111-D: statement is unreachable
-main.c(165): warning:  #223-D: function "EXTI_ClearITPendingBit" declared implicitly
-main.c(165): error:  #20: identifier "EXTI_Line12" is undefined
-compiling configurations.c...
-configurations.h(2): warning:  #1-D: last line of file ends without a newline
-configurations.c(47): error:  #20: identifier "gpioConfig" is undefined
-configurations.c(56): error:  #20: identifier "extiConfig" is undefined
-configurations.c(63): error:  #20: identifier "nvicConfig" is undefined
-Target not created
-Build target 'Target 1'
-compiling main.c...
-configurations.h(2): warning:  #1-D: last line of file ends without a newline
-main.c(98): warning:  #1293-D: assignment in condition
-main.c(100): warning:  #1293-D: assignment in condition
 main.c(106): warning:  #223-D: function "abs" declared implicitly
 main.c(145): warning:  #111-D: statement is unreachable
-compiling configurations.c...
-configurations.h(2): warning:  #1-D: last line of file ends without a newline
-configurations.c(49): error:  #20: identifier "gpioConfig" is undefined
-configurations.c(58): error:  #20: identifier "extiConfig" is undefined
-configurations.c(65): error:  #20: identifier "nvicConfig" is undefined
-compiling stm32f10x_exti.c...
-Target not created
-Build target 'Target 1'
-compiling configurations.c...
-configurations.h(2): warning:  #1-D: last line of file ends without a newline
 linking...
-Program Size: Code=23432 RO-data=784 RW-data=136 ZI-data=3312  
-"lab2.axf" - 0 Error(s), 1 Warning(s).
+Program Size: Code=23604 RO-data=788 RW-data=136 ZI-data=3312  
+"lab2.axf" - 0 Error(s), 2 Warning(s).
 Build target 'Target 1'
 assembling startup_stm32f10x_hd.s...
 compiling stm32f10x_rcc.c...
 compiling stm32f10x_i2c.c...
 compiling stm32f10x_gpio.c...
 compiling main.c...
-main.c(98): warning:  #1293-D: assignment in condition
-main.c(100): warning:  #1293-D: assignment in condition
 main.c(106): warning:  #223-D: function "abs" declared implicitly
 main.c(145): warning:  #111-D: statement is unreachable
 compiling LSM303DLH.c...
@@ -165,22 +31,27 @@ compiling misc.c...
 compiling stm32f10x_tim.c...
 compiling stm32f10x_exti.c...
 linking...
-Program Size: Code=23432 RO-data=784 RW-data=136 ZI-data=3312  
-"lab2.axf" - 0 Error(s), 4 Warning(s).
-Build target 'Target 1'
-compiling main.c...
-main.c(106): warning:  #223-D: function "abs" declared implicitly
-main.c(145): warning:  #111-D: statement is unreachable
-linking...
-Program Size: Code=23432 RO-data=784 RW-data=136 ZI-data=3312  
+Program Size: Code=23624 RO-data=784 RW-data=136 ZI-data=3312  
 "lab2.axf" - 0 Error(s), 2 Warning(s).
 Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
 Erase Done.
 Programming Done.
 Verify OK.
 Build target 'Target 1'
+compiling main.c...
+main.c(106): warning:  #223-D: function "abs" declared implicitly
+main.c(145): warning:  #111-D: statement is unreachable
 linking...
-Program Size: Code=23432 RO-data=784 RW-data=136 ZI-data=3312  
+Program Size: Code=23604 RO-data=788 RW-data=136 ZI-data=3312  
+"lab2.axf" - 0 Error(s), 2 Warning(s).
+Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling configurations.c...
+linking...
+Program Size: Code=23612 RO-data=788 RW-data=136 ZI-data=3312  
 "lab2.axf" - 0 Error(s), 0 Warning(s).
 Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
 Erase Done.
@@ -190,54 +61,13 @@ Build target 'Target 1'
 compiling main.c...
 main.c(106): warning:  #223-D: function "abs" declared implicitly
 main.c(145): warning:  #111-D: statement is unreachable
-main.c(176): warning:  #174-D: expression has no effect
-compiling configurations.c...
-configurations.c(81): error:  #20: identifier "RCC_APB2Periph_GPIO_KEY_BUTTON" is undefined
-configurations.c(83): error:  #20: identifier "GPIO_PIN_KEY_BUTTON" is undefined
-configurations.c(86): error:  #20: identifier "GPIO_KEY_BUTTON" is undefined
-configurations.c(89): error:  #20: identifier "GPIO_PORT_SOURCE_KEY_BUTTON" is undefined
-configurations.c(89): error:  #20: identifier "GPIO_PIN_SOURCE_KEY_BUTTON" is undefined
-configurations.c(92): error:  #20: identifier "EXTI_LINE_KEY_BUTTON" is undefined
-configurations.c(99): error:  #20: identifier "EXTI9_5_IRQChannel" is undefined
-Target not created
-Build target 'Target 1'
-compiling configurations.c...
-configurations.c(82): error:  #20: identifier "RCC_APB2Periph_GPIO_KEY_BUTTON" is undefined
-configurations.c(84): error:  #20: identifier "GPIO_PIN_KEY_BUTTON" is undefined
-configurations.c(87): error:  #20: identifier "GPIO_KEY_BUTTON" is undefined
-configurations.c(90): error:  #20: identifier "GPIO_PORT_SOURCE_KEY_BUTTON" is undefined
-configurations.c(90): error:  #20: identifier "GPIO_PIN_SOURCE_KEY_BUTTON" is undefined
-configurations.c(93): error:  #20: identifier "EXTI_LINE_KEY_BUTTON" is undefined
-configurations.c(100): error:  #20: identifier "EXTI9_5_IRQChannel" is undefined
-Target not created
-Build target 'Target 1'
-compiling configurations.c...
-configurations.c(82): error:  #20: identifier "RCC_APB2Periph_GPIO_KEY_BUTTON" is undefined
-configurations.c(84): error:  #20: identifier "GPIO_PIN_KEY_BUTTON" is undefined
-configurations.c(87): error:  #20: identifier "GPIO_KEY_BUTTON" is undefined
-configurations.c(90): error:  #20: identifier "GPIO_PORT_SOURCE_KEY_BUTTON" is undefined
-configurations.c(90): error:  #20: identifier "GPIO_PIN_SOURCE_KEY_BUTTON" is undefined
-configurations.c(93): error:  #20: identifier "EXTI_LINE_KEY_BUTTON" is undefined
-Target not created
-Build target 'Target 1'
-compiling configurations.c...
-configurations.c(103): error:  #20: identifier "RCC_APB2Periph_GPIO_KEY_BUTTON" is undefined
-configurations.c(105): error:  #20: identifier "GPIO_PIN_KEY_BUTTON" is undefined
-configurations.c(108): error:  #20: identifier "GPIO_KEY_BUTTON" is undefined
-configurations.c(111): error:  #20: identifier "GPIO_PORT_SOURCE_KEY_BUTTON" is undefined
-configurations.c(111): error:  #20: identifier "GPIO_PIN_SOURCE_KEY_BUTTON" is undefined
-configurations.c(114): error:  #20: identifier "EXTI_LINE_KEY_BUTTON" is undefined
-configurations.c(121): error:  #20: identifier "EXTI9_5_IRQChannel" is undefined
-Target not created
-Build target 'Target 1'
-compiling configurations.c...
-configurations.c(111): error:  #20: identifier "EXTI9_5_IRQChannel" is undefined
-Target not created
-Build target 'Target 1'
-compiling configurations.c...
 linking...
-Program Size: Code=23580 RO-data=788 RW-data=136 ZI-data=3312  
-"lab2.axf" - 0 Error(s), 0 Warning(s).
+Program Size: Code=23612 RO-data=788 RW-data=136 ZI-data=3312  
+"lab2.axf" - 0 Error(s), 2 Warning(s).
+Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
 Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
 Erase Done.
 Programming Done.
@@ -245,39 +75,26 @@ Verify OK.
 Build target 'Target 1'
 compiling main.c...
 main.c(106): warning:  #223-D: function "abs" declared implicitly
-main.c(145): warning:  #111-D: statement is unreachable
-main.c(176): warning:  #174-D: expression has no effect
+main.c(134): warning:  #223-D: function "ButtonInt_Configuration" declared implicitly
+main.c(147): warning:  #111-D: statement is unreachable
+compiling configurations.c...
 linking...
-Program Size: Code=23580 RO-data=788 RW-data=136 ZI-data=3312  
+Program Size: Code=23616 RO-data=784 RW-data=136 ZI-data=3312  
 "lab2.axf" - 0 Error(s), 3 Warning(s).
 Build target 'Target 1'
-assembling startup_stm32f10x_hd.s...
-compiling stm32f10x_rcc.c...
-compiling stm32f10x_i2c.c...
-compiling stm32f10x_gpio.c...
 compiling main.c...
+configurations.h(3): warning:  #1-D: last line of file ends without a newline
 main.c(106): warning:  #223-D: function "abs" declared implicitly
-main.c(145): warning:  #111-D: statement is unreachable
-compiling LSM303DLH.c...
-compiling iNEMO_led.c...
-compiling acc_lib.c...
-compiling FIRFilter.c...
+main.c(147): warning:  #111-D: statement is unreachable
 compiling configurations.c...
-compiling misc.c...
-compiling stm32f10x_tim.c...
-compiling stm32f10x_exti.c...
+configurations.h(3): warning:  #1-D: last line of file ends without a newline
 linking...
-Program Size: Code=23588 RO-data=788 RW-data=136 ZI-data=3312  
-"lab2.axf" - 0 Error(s), 2 Warning(s).
+Program Size: Code=23616 RO-data=784 RW-data=136 ZI-data=3312  
+"lab2.axf" - 0 Error(s), 4 Warning(s).
 Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
 Erase Done.
 Programming Done.
 Verify OK.
-Build target 'Target 1'
-compiling configurations.c...
-linking...
-Program Size: Code=23588 RO-data=788 RW-data=136 ZI-data=3312  
-"lab2.axf" - 0 Error(s), 0 Warning(s).
 Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
 Erase Done.
 Programming Done.
