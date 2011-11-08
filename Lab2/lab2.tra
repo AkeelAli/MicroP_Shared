@@ -13,14 +13,15 @@
 ### List of Objects: adding '"configurations.o"'
 ### List of Objects: adding '"misc.o"'
 ### List of Objects: adding '"stm32f10x_tim.o"'
+### List of Objects: adding '"stm32f10x_exti.o"'
 ### ADS-LD Command completed:
---cpu Cortex-M3 "startup_stm32f10x_hd.o" "stm32f10x_rcc.o" "stm32f10x_i2c.o" "stm32f10x_gpio.o" "main.o" "lsm303dlh.o" "inemo_led.o" "acc_lib.o" "firfilter.o" "configurations.o" "misc.o" "stm32f10x_tim.o" --ro-base 0x08000000 --entry 0x08000000 --rw-base 0x20000000 --entry Reset_Handler --first __Vectors --strict --autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--cpu Cortex-M3 "startup_stm32f10x_hd.o" "stm32f10x_rcc.o" "stm32f10x_i2c.o" "stm32f10x_gpio.o" "main.o" "lsm303dlh.o" "inemo_led.o" "acc_lib.o" "firfilter.o" "configurations.o" "misc.o" "stm32f10x_tim.o" "stm32f10x_exti.o" --ro-base 0x08000000 --entry 0x08000000 --rw-base 0x20000000 --entry Reset_Handler --first __Vectors --strict --autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
 --info sizes --info totals --info unused --info veneers 
  --list ".\lab2.map" -o "lab2.axf"### Preparing Environment (PrepEnvAds)
 ### ADS-LD Output File: 'lab2.axf'
 ### ADS-LD Command File: 'lab2.lnp'
 ### Checking for dirty Components...
-### Creating CmdFile 'lab2.lnp', Handle=0x00000554
+### Creating CmdFile 'lab2.lnp', Handle=0x00000464
 ### Writing '.lnp' file
 ### ADS-LD Command file 'lab2.lnp' is ready.
 ### ADS-LD: About to start ADS-LD Thread.

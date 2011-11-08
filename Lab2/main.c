@@ -5,9 +5,14 @@
 #include <stdio.h>
 #include <math.h>
 #include "stm32f10x_tim.h"
+#include "stm32f10x_exti.h"
 #include "FIRFilter.h"
 
 #include "configurations.h"
+
+#define FREE_FALL_THRESHOLD 0.8
+#define COMPASS_MAX_ANGLE 50
+
 
 // Raw data arrays
 s16 acc_data[3];
@@ -18,10 +23,7 @@ s16 magn_data[3];
 float filt_data[3];
 
 double alpha, beta;
-#define DEBUG 1
-#if (DEBUG == 1)
-double alpha_acc, beta_acc;
-#endif
+
 //double alpha_f, beta_f;
 static double a_calib=0;
 static double b_calib=0; //initialized to 0
@@ -30,6 +32,14 @@ int pitch=0, roll=0;
 float heading=0;
 
 Led_TypeDef red_led;
+
+enum MODE_T{
+	compass,
+	freefall
+};
+
+static enum MODE_T mode = freefall; 
+int free_fall_value; //placed here just so we can watch it
 
 // Process raw data from peripherals
 void update_data() {
@@ -85,17 +95,26 @@ void calculate_heading(){
 		heading += 180;
 	else if (x > 0 && y <= 0)
 		heading += 360;
-	else if (x = 0 && y < 0)
+	else if (x == 0 && y < 0)
 		heading = 90;
-	else if (x = 0 && y > 0)
+	else if (x == 0 && y > 0)
 		heading = 270;		
 }
 
 
-void light_led(){
- 
-	if (roll > 50 || pitch > 50)
+void check_maxAngle(){
+	if (abs(roll) > COMPASS_MAX_ANGLE || abs(pitch) > COMPASS_MAX_ANGLE)
 		iNEMO_Led_On(red_led);
+	else
+		iNEMO_Led_Off(red_led);
+}
+
+void check_freefall(){
+	free_fall_value = sqrt( magn_data[0]*magn_data[0] 
+		+ magn_data[1]*magn_data[1] + magn_data[2]*magn_data[2] );
+	
+	if (  free_fall_value < FREE_FALL_THRESHOLD ) 
+		EXTI_GenerateSWInterrupt(EXTI_Line12);
 	else
 		iNEMO_Led_Off(red_led);
 }
@@ -108,10 +127,9 @@ int main(void){
 
 	AM_Configuration();
 
-	//timer configuration for reading values from accelerometer
 	TIM_Configuration();
 
-	
+	SWInt_Configuration();	
 
 	//calibration: place on straight surface at this point (roll=0, pitch=0)
 	update_data();
@@ -127,13 +145,36 @@ int main(void){
 	return 0;	
 }
 
+//main timer interrupt handler
 __irq void TIM2_IRQHandler(void) {
 	update_data();
     filter_data();
 	calculate_angles();
 	calculate_heading();
-	light_led();
+	if (mode == freefall)	
+		check_freefall();
+	else
+		check_maxAngle();
 	
+	//clear the pending interrupt
 	TIM_ClearITPendingBit(TIM2, TIM_IT_Update);                       	
+}
+
+//SWInterrupt handler for freefall
+__irq void EXTI15_10_IRQHandler(void){
+	iNEMO_Led_On(red_led);
+
+	//clear the pending interrupt
+	EXTI_ClearITPendingBit(EXTI_Line12);
+}
+
+//button interrupt
+__irq void EXTI9_5_IRQHandler(void){
+	if (mode == freefall)	
+		mode = compass;
+	else
+		mode = freefall;
+		
+	TIM_ClearITPendingBit(TIM2, TIM_IT_Update);		
 }
 
