@@ -11,12 +11,11 @@
 
 #define FREE_FALL_THRESHOLD 800
 #define COMPASS_MAX_ANGLE 50
-
+#define DEBUG
 
 // Raw data arrays
 s16 acc_data[3];
 s16 magn_data[3];
-
 
 //Filtered data arrays:
 float filt_data[3];
@@ -36,17 +35,25 @@ enum MODE_T{
 	compass,
 	freefall
 };
+/* static enum variable to keep state (either COMPASS or FREFALL) */
+static enum MODE_T mode = compass;
 
-static enum MODE_T mode = compass; 
-int free_fall_value; //placed here just so we can watch it
+#ifdef DEBUG 
+int free_fall_value;
+#endif
 
-// Process raw data from peripherals
+/**
+	Update Raw Data from Accelerometer and Magnometer
+*/
 void update_data() {
-	LSM303DLH_Acc_Read_Acc(acc_data);	// Read accelerometer data
+	LSM303DLH_Acc_Read_Acc(acc_data);	
 
 	LSM303DLH_Magn_Read_Magn(magn_data);
 }
 
+/**
+	Filter Data
+*/
 void filter_data() {
 
     filt_data[0] = process_filter(acc_data[0], 0);
@@ -55,6 +62,9 @@ void filter_data() {
 
 }
 
+/**
+	Pitch and Roll calculations
+*/
 void calculate_angles(){
 	alpha=arctan(filt_data[0]/sqrt( (filt_data[1]*filt_data[1]+filt_data[2]*filt_data[2]) *1.0 ));
 	beta=arctan(filt_data[1]/sqrt(  (filt_data[0]*filt_data[0]+filt_data[2]*filt_data[2])  *1.0 ));
@@ -81,6 +91,9 @@ void calculate_angles(){
 	roll = (int) beta;
 }
 
+/**
+	Heading calculations stored in variable heading
+*/
 void calculate_heading(){
 
 	s16 y = magn_data[1]*cos(roll) - magn_data[2]*cos(pitch)*sin(roll) + magn_data[0]*sin(pitch)*sin(roll);
@@ -100,7 +113,9 @@ void calculate_heading(){
 		heading = 270;		
 }
 
-
+/**
+	COMPASS MODE: Check if exceeded max angle and light LED
+*/
 void check_maxAngle(){
 	if (abs(roll) > COMPASS_MAX_ANGLE || abs(pitch) > COMPASS_MAX_ANGLE)
 		iNEMO_Led_On(red_led);
@@ -108,6 +123,9 @@ void check_maxAngle(){
 		iNEMO_Led_Off(red_led);
 }
 
+/**
+	FREEFALL MODE: Check if freefall, and generate SW interrupt (that lights LED)
+*/
 void check_freefall(){
 	free_fall_value = sqrt( acc_data[0]*acc_data[0] 
 		+ acc_data[1]*acc_data[1] + acc_data[2]*acc_data[2] );
@@ -118,10 +136,13 @@ void check_freefall(){
 		iNEMO_Led_Off(red_led);
 }
 
-
+/***************************************
+	MAIN FUNCTION
+****************************************/
 
 int main(void){	
  
+	/* Call Configuration Functions */
 	iNEMO_Led_Init(red_led);
 
 	AM_Configuration();
@@ -132,7 +153,7 @@ int main(void){
 	
 	ButtonInt_Configuration();	
 
-	//calibration: place on straight surface at this point (roll=0, pitch=0)
+	/* calibration: place on straight surface at this point (roll=0, pitch=0) */
 	update_data();
 	filter_data();
 	calculate_angles();
@@ -146,7 +167,15 @@ int main(void){
 	return 0;	
 }
 
-//main timer interrupt handler
+
+/***************************************
+	INTERRUPT HANDLERS
+****************************************/
+
+
+/**
+	main timer interrupt handler
+*/
 __irq void TIM2_IRQHandler(void) {
 	update_data();
     filter_data();
@@ -161,7 +190,9 @@ __irq void TIM2_IRQHandler(void) {
 	TIM_ClearITPendingBit(TIM2, TIM_IT_Update);                       	
 }
 
-
+/**
+	ISR handling both the button and the freefall interrupt
+*/
 __irq void EXTI15_10_IRQHandler(void){
 	// button interrupt
 	if (EXTI_GetITStatus(EXTI_Line13) != RESET){
