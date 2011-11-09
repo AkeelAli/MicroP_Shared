@@ -8,94 +8,23 @@ Project File Date:  11/08/2011
 
 <h2>Output:</h2>
 Build target 'Target 1'
-compiling main.c...
-main.c(106): warning:  #223-D: function "abs" declared implicitly
-main.c(145): warning:  #111-D: statement is unreachable
-linking...
-Program Size: Code=23604 RO-data=788 RW-data=136 ZI-data=3312  
-"lab2.axf" - 0 Error(s), 2 Warning(s).
-Build target 'Target 1'
 assembling startup_stm32f10x_hd.s...
 compiling stm32f10x_rcc.c...
 compiling stm32f10x_i2c.c...
 compiling stm32f10x_gpio.c...
 compiling main.c...
-main.c(106): warning:  #223-D: function "abs" declared implicitly
-main.c(145): warning:  #111-D: statement is unreachable
+configurations.h(3): warning:  #1-D: last line of file ends without a newline
+main.c(105): warning:  #223-D: function "abs" declared implicitly
+main.c(146): warning:  #111-D: statement is unreachable
 compiling LSM303DLH.c...
 compiling iNEMO_led.c...
 compiling acc_lib.c...
 compiling FIRFilter.c...
 compiling configurations.c...
+configurations.h(3): warning:  #1-D: last line of file ends without a newline
 compiling misc.c...
 compiling stm32f10x_tim.c...
 compiling stm32f10x_exti.c...
 linking...
-Program Size: Code=23624 RO-data=784 RW-data=136 ZI-data=3312  
-"lab2.axf" - 0 Error(s), 2 Warning(s).
-Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'Target 1'
-compiling main.c...
-main.c(106): warning:  #223-D: function "abs" declared implicitly
-main.c(145): warning:  #111-D: statement is unreachable
-linking...
-Program Size: Code=23604 RO-data=788 RW-data=136 ZI-data=3312  
-"lab2.axf" - 0 Error(s), 2 Warning(s).
-Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'Target 1'
-compiling configurations.c...
-linking...
-Program Size: Code=23612 RO-data=788 RW-data=136 ZI-data=3312  
-"lab2.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'Target 1'
-compiling main.c...
-main.c(106): warning:  #223-D: function "abs" declared implicitly
-main.c(145): warning:  #111-D: statement is unreachable
-linking...
-Program Size: Code=23612 RO-data=788 RW-data=136 ZI-data=3312  
-"lab2.axf" - 0 Error(s), 2 Warning(s).
-Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'Target 1'
-compiling main.c...
-main.c(106): warning:  #223-D: function "abs" declared implicitly
-main.c(134): warning:  #223-D: function "ButtonInt_Configuration" declared implicitly
-main.c(147): warning:  #111-D: statement is unreachable
-compiling configurations.c...
-linking...
-Program Size: Code=23616 RO-data=784 RW-data=136 ZI-data=3312  
-"lab2.axf" - 0 Error(s), 3 Warning(s).
-Build target 'Target 1'
-compiling main.c...
-configurations.h(3): warning:  #1-D: last line of file ends without a newline
-main.c(106): warning:  #223-D: function "abs" declared implicitly
-main.c(147): warning:  #111-D: statement is unreachable
-compiling configurations.c...
-configurations.h(3): warning:  #1-D: last line of file ends without a newline
-linking...
 Program Size: Code=23616 RO-data=784 RW-data=136 ZI-data=3312  
 "lab2.axf" - 0 Error(s), 4 Warning(s).
-Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Load "C:\\Users\\Akeel\\McGill\\Fall 2011\\microP\\MicroP_Shared\\Lab2\\lab2.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.

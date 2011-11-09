@@ -1,7 +1,6 @@
 #include "LSM303DLH.h"
 #include "iNEMO_led.h"
 #include "acc_lib.h"
-//#include <stm32f10x.h>
 #include <stdio.h>
 #include <math.h>
 #include "stm32f10x_tim.h"
